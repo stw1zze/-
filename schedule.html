@@ -133,6 +133,53 @@
         padding: 5px 10px;
       }
     }
+
+    .breaks-container {
+      max-width: 400px;
+      margin: 3rem auto 0;
+      padding: 0 15px;
+    }
+
+    .breaks-container h2 {
+      color: #004085;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .breaks-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .breaks-list li {
+      background: #e6f0ff;
+      border-left: 5px solid #007bff;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #004085;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.15);
+      cursor: default;
+      transition: background 0.3s ease;
+    }
+
+    .breaks-list li:hover {
+      background: #cce5ff;
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+    }
+
+    .breaks-list li i.fa-cutlery,
+    .breaks-list li i.fa-coffee {
+      margin-right: 12px;
+      color: #007bff;
+      font-size: 1.3rem;
+    }
   </style>
 </head>
 <body>
@@ -141,6 +188,7 @@
     <div class="container">
       <a href="index.html">Головна</a>
       <a href="news.html">Новини</a>
+      <a href="schedule.html" style="color: #cce5ff; pointer-events: none;">Графік</a>
     </div>
   </nav>
 
@@ -158,52 +206,19 @@
     </ul>
   </div>
 
- <div class="container mt-5">
-    <h2 class="fade-in">Перерви</h2>
-    <ul class="list-unstyled fade-in" style="max-width: 400px; margin: 0 auto; padding: 0;">
+  <div class="breaks-container">
+    <h2>Перерви</h2>
+    <ul class="breaks-list">
       <li>
         <span><i class="fa fa-cutlery"></i> Обідня перерва</span>
-        <div class="time-badge"><i class="fa fa-clock-o"></i> 14:00 - 15:00</div>
+        <div class="time-badge"><i class="fa fa-clock"></i> 14:00 - 15:00</div>
       </li>
       <li>
         <span><i class="fa fa-coffee"></i> Вечірня перерва</span>
-        <div class="time-badge"><i class="fa fa-clock-o"></i> 18:00 - 19:00</div>
+        <div class="time-badge"><i class="fa fa-clock"></i> 18:00 - 19:00</div>
       </li>
     </ul>
   </div>
-
- <style>
-    #schedule ul li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 2px solid #007bff;
-      padding: 10px 20px;
-      margin-bottom: 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      color: #004085;
-      background: #e6f0ff;
-      cursor: default;
-      transition: background 0.3s ease;
-    }
-    #schedule ul li:hover {
-      background: #cce5ff;
-    }
-    #schedule ul li span i {
-      margin-right: 8px;
-      color: #007bff;
-    }
-    #schedule ul li div.time-badge i {
-      margin-right: 6px;
-      color: #004085;
-    }
-    .mt-5 {
-      margin-top: 3rem !important;
-    }
-  </style>
-</section>
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
