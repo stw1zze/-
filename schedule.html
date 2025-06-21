@@ -116,6 +116,25 @@
       font-size: 1.2rem;
     }
 
+    /* Стили для перерывов с белым кружком за иконкой */
+    .break-time-badge {
+      background-color: white !important;
+      color: #007bff !important;
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+    }
+
+    .icon-circle {
+      background: white;
+      color: #007bff;
+      border-radius: 50%;
+      padding: 5px;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    }
+
     @media (max-width: 576px) {
       .schedule-container {
         max-width: 95%;
@@ -158,55 +177,20 @@
     </ul>
   </div>
 
- <div class="container mt-5">
+  <div class="container mt-5">
     <h2 class="fade-in">Перерви</h2>
     <ul class="list-unstyled fade-in" style="max-width: 400px; margin: 0 auto; padding: 0;">
       <li>
         <span><i class="fa fa-cutlery"></i> Обідня перерва</span>
-        <div class="time-badge"><i class="fa fa-clock-o"></i> 14:00 - 15:00</div>
+        <div class="time-badge break-time-badge"><i class="fa fa-clock icon-circle"></i> 14:00 - 15:00</div>
       </li>
       <li>
         <span><i class="fa fa-coffee"></i> Вечірня перерва</span>
-        <div class="time-badge"><i class="fa fa-clock-o"></i> 18:00 - 19:00</div>
+        <div class="time-badge break-time-badge"><i class="fa fa-clock icon-circle"></i> 18:00 - 19:00</div>
       </li>
     </ul>
   </div>
 
- <style>
-    #schedule ul li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 2px solid #007bff;
-      padding: 10px 20px;
-      margin-bottom: 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      color: #004085;
-      background: #e6f0ff;
-      cursor: default;
-      transition: background 0.3s ease;
-    }
-    #schedule ul li:hover {
-      background: #cce5ff;
-    }
-    #schedule ul li span i {
-      margin-right: 8px;
-      color: #007bff;
-    }
-    #schedule ul li div.time-badge i {
-      margin-right: 6px;
-      color: #004085;
-    }
-    .mt-5 {
-      margin-top: 3rem !important;
-    }
-  </style>
-</section>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
-
-правильно?
