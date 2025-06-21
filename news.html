@@ -14,35 +14,58 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f9fbfc;
+      background: linear-gradient(to bottom right, #007bff, #ffffff);
       color: #1a1a1a;
+      overflow: hidden;
+      position: relative;
     }
+
+    .logo {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
     nav.navbar {
       background-color: #007bff;
+      z-index: 1;
+      position: relative;
     }
+
     nav.navbar a.nav-link {
       color: white;
       font-weight: 600;
       transition: color 0.3s;
     }
+
     nav.navbar a.nav-link:hover {
       color: #cce5ff;
     }
+
     header {
       padding: 40px 0;
       text-align: center;
       background: #e6f0ff;
       box-shadow: 0 3px 10px rgb(0 123 255 / 0.2);
+      position: relative;
+      z-index: 1;
     }
+
     header h1 {
       font-weight: 700;
       color: #004085;
       font-size: 2rem;
     }
+
     main.container {
       margin-top: 40px;
       max-width: 700px;
+      position: relative;
+      z-index: 1;
     }
+
     article.news-item {
       background: white;
       border-radius: 12px;
@@ -51,28 +74,46 @@
       margin-bottom: 30px;
       transition: box-shadow 0.3s ease;
     }
+
     article.news-item:hover {
       box-shadow: 0 8px 30px rgba(0, 123, 255, 0.25);
     }
+
     article.news-item h3 {
       color: #007bff;
       font-weight: 700;
       margin-bottom: 10px;
     }
+
     article.news-item p {
       font-size: 1.05rem;
       line-height: 1.5;
       color: #333;
     }
+
     footer {
       margin: 60px 0 30px;
       text-align: center;
       color: #777;
       font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
+
+  <!-- Логотипы в хаотичном порядке -->
+  <img src="logo.png" class="logo" style="top: 5%; left: 10%;">
+  <img src="logo.png" class="logo" style="top: 20%; left: 70%;">
+  <img src="logo.png" class="logo" style="top: 50%; left: 5%;">
+  <img src="logo.png" class="logo" style="top: 10%; left: 80%;">
+  <img src="logo.png" class="logo" style="top: 60%; left: 40%;">
+  <img src="logo.png" class="logo" style="top: 35%; left: 90%;">
+  <img src="logo.png" class="logo" style="top: 75%; left: 20%;">
+  <img src="logo.png" class="logo" style="top: 85%; left: 60%;">
+  <img src="logo.png" class="logo" style="top: 45%; left: 30%;">
+  <img src="logo.png" class="logo" style="top: 25%; left: 50%;">
 
 <nav class="navbar navbar-expand-md sticky-top">
   <div class="container">
