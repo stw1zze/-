@@ -281,36 +281,88 @@
     </div>
   </section>
 
- <style>
-  .rank-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* расстояние между элементами */
-    padding-left: 0;
-  }
-
-</style>
-
-<!-- Звання -->
-  <section id="ranks" class="bg-light">
-    <div class="container">
-      <h2 class="fade-in">Звання</h2>
-      <ul class="rank-list fade-in list-unstyled">
-        <li>Курсант</li>
-        <li>Капрал</li>
-        <li>Сержант</li>
-        <li>Старший сержант</li>
-        <li>Молодший лейтенант</li>
-        <li>Лейтенант</li>
-        <li>Старший лейтенант</li>
-        <li>Капітан</li>
- <li>Майор</li>
- <li>Підполковник</li>
- <li>Полковник</li>
- <li>Генерал</li>
-      </ul>
+ <!-- Раздел Звання -->
+<section id="ranks" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">🎖 Наші Звання</h2>
+    <div class="row justify-content-center g-4">
+      <!-- Звання 1 -->
+      <div class="col-6 col-md-3">
+        <div class="rank-card rank1 text-center" data-bs-toggle="modal" data-bs-target="#rankModal1">
+          <div class="rank-icon mb-3">
+            <img src="icons/star1.png" alt="Курсант" />
+          </div>
+          <h5>Курсант</h5>
+        </div>
+      </div>
+      <!-- Звання 2 -->
+      <div class="col-6 col-md-3">
+        <div class="rank-card rank2 text-center" data-bs-toggle="modal" data-bs-target="#rankModal2">
+          <div class="rank-icon mb-3">
+            <img src="icons/star2.png" alt="Капрал" />
+          </div>
+          <h5>Капрал</h5>
+        </div>
+      </div>
+      <!-- Звання 3 -->
+      <div class="col-6 col-md-3">
+        <div class="rank-card rank3 text-center" data-bs-toggle="modal" data-bs-target="#rankModal3">
+          <div class="rank-icon mb-3">
+            <img src="icons/star3.png" alt="Сержант" />
+          </div>
+          <h5>Сержант</h5>
+        </div>
+      </div>
+      <!-- Звання 4 -->
+      <div class="col-6 col-md-3">
+        <div class="rank-card rank4 text-center" data-bs-toggle="modal" data-bs-target="#rankModal4">
+          <div class="rank-icon mb-3">
+            <img src="icons/star4.png" alt="Старший сержант" />
+          </div>
+          <h5>Старший сержант</h5>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Модалки -->
+<div class="modal fade" id="rankModal1" tabindex="-1" aria-labelledby="rankModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4 id="rankModal1Label">Курсант</h4>
+      <p class="text-muted">Початкове звання. Вивчає основи служби, правила СБУ та проходить стажування.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rankModal2" tabindex="-1" aria-labelledby="rankModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4 id="rankModal2Label">Капрал</h4>
+      <p class="text-muted">Нижчий офіцер, який вже пройшов базову підготовку. Має обмежену командну роль.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rankModal3" tabindex="-1" aria-labelledby="rankModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4 id="rankModal3Label">Сержант</h4>
+      <p class="text-muted">Відповідає за невеликі підрозділи, контролює дисципліну та ефективність.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rankModal4" tabindex="-1" aria-labelledby="rankModal4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4 id="rankModal4Label">Старший сержант</h4>
+      <p class="text-muted">Досвідчений керівник груп, бере участь у стратегічному плануванні операцій.</p>
+    </div>
+  </div>
+</div>
+
   <!-- Заявка -->
   <section id="apply">
     <div class="container">
