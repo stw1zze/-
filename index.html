@@ -2,92 +2,121 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>СБУ RP GTA Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СБУ RP GTA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    body { background: #0a0a0f; color: #e0e0e0; }
-    .sidebar { background: #0c1c2b; min-height: 100vh; }
+    body { background-color: #0a0a0f; color: #e0e0e0; }
+    .sidebar { width: 250px; background-color: #0c1c2b; min-height: 100vh; position: fixed; top: 0; left: 0; padding-top: 1rem; }
     .sidebar .nav-link { color: #e0e0e0; }
-    .sidebar .nav-link.active { background: #004b8d; }
-    .navbar { background: #001a33; }
+    .sidebar .nav-link.active, .sidebar .nav-link:hover { background-color: #004b8d; }
+    .content { margin-left: 250px; padding: 2rem; }
+    .navbar { background-color: #001a33; }
+    .form-control, .form-control:focus { background-color: #222; color: #fff; border: 1px solid #444; }
+    .list-group-item { background-color: #1c1c1c; border-color: #333; color: #fff; }
   </style>
 </head>
 <body>
-  <div class="d-flex">
-    <nav class="sidebar p-3 flex-shrink-0">
-      <div class="text-center mb-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg"
-             alt="СБУ" width="60"><br>
-        <strong>СБУ RP GTA</strong>
-      </div>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item"><a class="nav-link active" href="#news">Новини</a></li>
-        <li class="nav-item"><a class="nav-link" href="#team">Склад</a></li>
-        <li class="nav-item"><a class="nav-link" href="#ranks">Звання</a></li>
-        <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
-        <li class="nav-item"><a class="nav-link" href="#admin">Адмінпанель</a></li>
-      </ul>
-    </nav>
-    <div class="flex-grow-1">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">СБУ RP GTA</span>
-        </div>
-      </nav>
-      <div class="p-4">
-        <section id="news" class="mb-5">
-          <h3>📰 Новини</h3>
-          <div class="card bg-dark text-white">
-            <div class="card-body">Тут буде стрічка новин...</div>
-          </div>
-        </section>
-        <section id="team" class="mb-5">
-          <h3>👥 Склад СБУ</h3>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card bg-dark text-white mb-3">
-                <div class="card-body text-center">
-                  <img src="https://via.placeholder.com/120" class="rounded mb-2"><br>
-                  <strong>Олександр Шевченко</strong><br>Директор
-                </div>
-              </div>
-            </div>
-            <!-- Можно скопировать карточку для других -->
-          </div>
-        </section>
-        <section id="ranks" class="mb-5">
-          <h3>🏅 Звання</h3>
-          <ul class="list-group list-group-flush bg-dark text-white">
-            <li class="list-group-item bg-dark border-secondary">Стажер</li>
-            <li class="list-group-item bg-dark border-secondary">Агент</li>
-            <li class="list-group-item bg-dark border-secondary">Старший агент</li>
-            <!-- и т.д. -->
-          </ul>
-        </section>
-        <section id="apply" class="mb-5">
-          <h3>📄 Заявка на вступ</h3>
-          <form class="bg-dark p-3 rounded">
-            <div class="mb-3">
-              <label class="form-label">Discord ID</label>
-              <input type="text" class="form-control bg-secondary text-white">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Чому хочеш до СБУ?</label>
-              <textarea class="form-control bg-secondary text-white" rows="3"></textarea>
-            </div>
-            <button class="btn btn-primary">Відправити</button>
-          </form>
-        </section>
-        <section id="admin" class="mb-5">
-          <h3>⚙️ Адмінпанель</h3>
-          <div class="bg-dark p-3 rounded">Тут будуть адміністративні інструменти...</div>
-        </section>
-      </div>
+  <div class="sidebar d-flex flex-column p-3">
+    <div class="text-center mb-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg" width="70" alt="СБУ">
+      <h5 class="mt-2">СБУ RP GTA</h5>
     </div>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link active" href="#news">Новини</a>
+      <a class="nav-link" href="#team">Склад</a>
+      <a class="nav-link" href="#ranks">Звання</a>
+      <a class="nav-link" href="#apply">Заявка</a>
+      <a class="nav-link" href="#admin">Адмінпанель</a>
+    </nav>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="content">
+    <nav class="navbar navbar-dark mb-4">
+      <div class="container-fluid">
+        <span class="navbar-brand">Панель керування СБУ</span>
+      </div>
+    </nav>
+
+    <section id="news">
+      <h3>📰 Новини</h3>
+      <div class="card bg-dark text-white mb-3">
+        <div class="card-body">Тут буде стрічка новин...</div>
+      </div>
+    </section>
+
+    <section id="team">
+      <h3>👥 Склад</h3>
+      <div id="team-list" class="row"></div>
+    </section>
+
+    <section id="ranks">
+      <h3>🏅 Звання</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Стажер</li>
+        <li class="list-group-item">Агент</li>
+        <li class="list-group-item">Старший агент</li>
+        <li class="list-group-item">Інспектор</li>
+        <li class="list-group-item">Керівник відділу</li>
+      </ul>
+    </section>
+
+    <section id="apply" class="mt-4">
+      <h3>📄 Заявка</h3>
+      <form id="apply-form" class="bg-dark p-3 rounded">
+        <div class="mb-3">
+          <label class="form-label">Discord ID</label>
+          <input type="text" class="form-control" id="discord-id" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Чому хочеш вступити?</label>
+          <textarea class="form-control" id="reason" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Надіслати</button>
+        <div id="form-status" class="mt-2"></div>
+      </form>
+    </section>
+
+    <section id="admin" class="mt-4">
+      <h3>⚙️ Адмінпанель</h3>
+      <button class="btn btn-success mb-2" onclick="addAgent('Іван Петренко', 'Агент')">+ Додати Агента</button>
+    </section>
+  </div>
+
+  <script>
+    const webhookURL = "https://discord.com/api/webhooks/your_webhook_here"; // ВСТАВ СВІЙ WEBHOOK
+
+    document.getElementById("apply-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const discordID = document.getElementById("discord-id").value;
+      const reason = document.getElementById("reason").value;
+
+      fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: `Нова заявка до СБУ:\nDiscord: ${discordID}\nПричина: ${reason}` })
+      }).then(res => {
+        document.getElementById("form-status").textContent = "✅ Заявку відправлено!";
+        document.getElementById("apply-form").reset();
+      }).catch(() => {
+        document.getElementById("form-status").textContent = "❌ Помилка при відправленні!";
+      });
+    });
+
+    function addAgent(name, rank) {
+      const card = document.createElement("div");
+      card.className = "col-md-4 mb-3";
+      card.innerHTML = `
+        <div class="card bg-dark text-white h-100">
+          <div class="card-body text-center">
+            <img src="https://via.placeholder.com/100" class="rounded-circle mb-2" alt="">
+            <h5>${name}</h5>
+            <p>${rank}</p>
+          </div>
+        </div>`;
+      document.getElementById("team-list").appendChild(card);
+    }
+  </script>
 </body>
 </html>
