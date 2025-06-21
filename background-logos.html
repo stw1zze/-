@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Анімований Фон з Логотипами</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      background: #f4f8ff;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    #background-logos {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .bg-logo {
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.07;
+      color: #007bff;
+      filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.2));
+      user-select: none;
+      will-change: transform;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+      color: #004085;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="background-logos"></div>
+
+  <h1>Привіт! Це анімований фон з логотипами</h1>
+
+  <script>
+    const logosCount = 10;
+    const container = document.getElementById('background-logos');
+    let vw = window.innerWidth;
+    let vh = window.innerHeight;
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const logos = [];
+
+    for(let i = 0; i < logosCount; i++) {
+      const logo = document.createElement('i');
+      logo.className = 'fa-solid fa-shield-halved bg-logo';
+      container.appendChild(logo);
+
+      const size = random(60, 100);
+      const posX = random(0, vw - size);
+      const posY = random(0, vh - size);
+
+      const speedX = random(10, 40) * (Math.random() < 0.5 ? 1 : -1);
+      const speedY = random(10, 40) * (Math.random() < 0.5 ? 1 : -1);
+
+      logos.push({
+        el: logo,
+        x: posX,
+        y: posY,
+        speedX,
+        speedY,
+        size
+      });
+
+      logo.style.fontSize = size + 'px';
+      logo.style.left = posX + 'px';
+      logo.style.top = posY + 'px';
+    }
+
+    function animate() {
+      logos.forEach(logo => {
+        logo.x += logo.speedX * 0.016;
+        logo.y += logo.speedY * 0.016;
+
+        if(logo.x <= 0) {
+          logo.x = 0;
+          logo.speedX *= -1;
+        }
+        if(logo.x >= vw - logo.size) {
+          logo.x = vw - logo.size;
+          logo.speedX *= -1;
+        }
+        if(logo.y <= 0) {
+          logo.y = 0;
+          logo.speedY *= -1;
+        }
+        if(logo.y >= vh - logo.size) {
+          logo.y = vh - logo.size;
+          logo.speedY *= -1;
+        }
+
+        logo.el.style.transform = `translate(${logo.x}px, ${logo.y}px)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+
+    window.addEventListener('resize', () => {
+      vw = window.innerWidth;
+      vh = window.innerHeight;
+      logos.forEach(logo => {
+        if(logo.x > vw - logo.size) logo.x = vw - logo.size;
+        if(logo.y > vh - logo.size) logo.y = vh - logo.size;
+      });
+    });
+  </script>
+</body>
+</html>
