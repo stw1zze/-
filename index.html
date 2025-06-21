@@ -2,146 +2,92 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СБУ | RP GTA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>СБУ RP GTA Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #0a0a0f;
-      color: #e0e0e0;
-    }
-    header {
-      background-color: #0c1c2b;
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 2px solid #004b8d;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-    .logo img {
-      width: 60px;
-      height: 60px;
-      border-radius: 8px;
-    }
-    .logo h1 {
-      color: #00aaff;
-      font-size: 2rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    nav {
-      background-color: #001a33;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 1px solid #003366;
-    }
-    nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #004b8d;
-    }
-    .container {
-      padding: 20px;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    section h2 {
-      border-left: 4px solid #00aaff;
-      padding-left: 10px;
-      margin-bottom: 15px;
-      color: #00aaff;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #0c1c2b;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      .logo {
-        flex-direction: column;
-      }
-    }
+    body { background: #0a0a0f; color: #e0e0e0; }
+    .sidebar { background: #0c1c2b; min-height: 100vh; }
+    .sidebar .nav-link { color: #e0e0e0; }
+    .sidebar .nav-link.active { background: #004b8d; }
+    .navbar { background: #001a33; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg" alt="СБУ">
-      <h1>Служба Безпеки України</h1>
-    </div>
-    <p style="color: #aaa; font-size: 1rem; margin-top: 10px;">RP GTA | Захист держави у віртуальному світі</p>
-  </header>
-  <nav>
-    <a href="#news">Новини</a>
-    <a href="#team">Склад</a>
-    <a href="#ranks">Звання</a>
-    <a href="#apply">Заявка</a>
-    <a href="#admin">Адмінпанель</a>
-  </nav>
-
-  <div class="container">
-    <section id="news">
-      <h2>Останні новини</h2>
-      <p>Незабаром відкриття нового відділу боротьби з корупцією!</p>
-    </section>
-
-    <section id="team">
-      <h2>Склад СБУ</h2>
-      <ul>
-        <li>Директор: Олександр Шевченко</li>
-        <li>Заступник: Іван Дорошенко</li>
-        <li>Агент: Микита Коваль</li>
+  <div class="d-flex">
+    <nav class="sidebar p-3 flex-shrink-0">
+      <div class="text-center mb-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg"
+             alt="СБУ" width="60"><br>
+        <strong>СБУ RP GTA</strong>
+      </div>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item"><a class="nav-link active" href="#news">Новини</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Склад</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ranks">Звання</a></li>
+        <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
+        <li class="nav-item"><a class="nav-link" href="#admin">Адмінпанель</a></li>
       </ul>
-    </section>
-
-    <section id="ranks">
-      <h2>Звання</h2>
-      <ol>
-        <li>Стажер</li>
-        <li>Агент</li>
-        <li>Старший агент</li>
-        <li>Керівник відділу</li>
-        <li>Заступник директора</li>
-        <li>Директор</li>
-      </ol>
-    </section>
-
-    <section id="apply">
-      <h2>Заявка на вступ</h2>
-      <p>Заповни форму в Discord або на форумі сервера.</p>
-    </section>
-
-    <section id="admin">
-      <h2>Адмінпанель</h2>
-      <p>Доступ лише для співробітників СБУ. (Макет без функціоналу)</p>
-    </section>
+    </nav>
+    <div class="flex-grow-1">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">СБУ RP GTA</span>
+        </div>
+      </nav>
+      <div class="p-4">
+        <section id="news" class="mb-5">
+          <h3>📰 Новини</h3>
+          <div class="card bg-dark text-white">
+            <div class="card-body">Тут буде стрічка новин...</div>
+          </div>
+        </section>
+        <section id="team" class="mb-5">
+          <h3>👥 Склад СБУ</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card bg-dark text-white mb-3">
+                <div class="card-body text-center">
+                  <img src="https://via.placeholder.com/120" class="rounded mb-2"><br>
+                  <strong>Олександр Шевченко</strong><br>Директор
+                </div>
+              </div>
+            </div>
+            <!-- Можно скопировать карточку для других -->
+          </div>
+        </section>
+        <section id="ranks" class="mb-5">
+          <h3>🏅 Звання</h3>
+          <ul class="list-group list-group-flush bg-dark text-white">
+            <li class="list-group-item bg-dark border-secondary">Стажер</li>
+            <li class="list-group-item bg-dark border-secondary">Агент</li>
+            <li class="list-group-item bg-dark border-secondary">Старший агент</li>
+            <!-- и т.д. -->
+          </ul>
+        </section>
+        <section id="apply" class="mb-5">
+          <h3>📄 Заявка на вступ</h3>
+          <form class="bg-dark p-3 rounded">
+            <div class="mb-3">
+              <label class="form-label">Discord ID</label>
+              <input type="text" class="form-control bg-secondary text-white">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Чому хочеш до СБУ?</label>
+              <textarea class="form-control bg-secondary text-white" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary">Відправити</button>
+          </form>
+        </section>
+        <section id="admin" class="mb-5">
+          <h3>⚙️ Адмінпанель</h3>
+          <div class="bg-dark p-3 rounded">Тут будуть адміністративні інструменти...</div>
+        </section>
+      </div>
+    </div>
   </div>
 
-  <footer>
-    &copy; 2025 СБУ RP GTA. Усі права захищено.
-  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
