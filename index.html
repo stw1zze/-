@@ -14,10 +14,14 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      /* background: #f9fbfc; */  /* закомментировал предыдущий фон */
       background: linear-gradient(to bottom, #007bff, #ffffff);
       color: #1a1a1a;
       scroll-behavior: smooth;
+    }
+
+    /* Убираем фон у секций, чтобы градиент body был виден */
+    section, .bg-light {
+      background: transparent !important;
     }
 
     nav.navbar {
@@ -231,7 +235,7 @@
   <!-- Хедер -->
   <header id="header">
     <img src="logo.png" alt="СБУ Логотип" />
-    <h1>Служба Безпеки України Південої України</h1>
+    <h1>Служба Безпеки України Південой України</h1>
   </header>
 
   <!-- Команда -->
@@ -295,10 +299,10 @@
         <li>Лейтенант</li>
         <li>Старший лейтенант</li>
         <li>Капітан</li>
- <li>Майор</li>
- <li>Підполковник</li>
- <li>Полковник</li>
- <li>Генерал</li>
+        <li>Майор</li>
+        <li>Підполковник</li>
+        <li>Полковник</li>
+        <li>Генерал</li>
       </ul>
     </div>
   </section>
@@ -318,15 +322,4 @@
   <script>
     function onEntry(entry) {
       entry.forEach(change => {
-        if (change.isIntersecting) {
-          change.target.classList.add('visible');
-        }
-      });
-    }
-
-    let options = { threshold: [0.1] };
-    let observer = new IntersectionObserver(onEntry, options);
-    document.querySelectorAll('.fade-in').forEach(elm => observer.observe(elm));
-  </script>
-</body>
-</html>
+        if (change.isIntersecting)
