@@ -1,63 +1,77 @@
-<style>
-  /* Уже есть базовые стили — добавлю улучшения */
-
-  article.news-item {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
-    padding: 30px 35px;
-    margin-bottom: 35px;
-    transition: box-shadow 0.4s ease, transform 0.3s ease;
-    cursor: default;
-    border-left: 6px solid #007bff;
-    position: relative;
-  }
-
-  article.news-item:hover {
-    box-shadow: 0 12px 40px rgba(0, 123, 255, 0.35);
-    transform: translateY(-6px);
-  }
-
-  article.news-item h3 {
-    color: #0056b3;
-    font-weight: 800;
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    text-shadow: 1px 1px 2px rgba(0, 86, 179, 0.3);
-  }
-
-  article.news-item p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #2c3e50;
-    letter-spacing: 0.02em;
-    user-select: text;
-  }
-
-  /* Добавим небольшой маркер перед новостью для акцента */
-  article.news-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 25px;
-    width: 6px;
-    height: 30px;
-    background: linear-gradient(180deg, #007bff 0%, #0056b3 100%);
-    border-radius: 3px;
-  }
-
-  /* Адаптив для мобильных */
-  @media (max-width: 576px) {
-    article.news-item {
-      padding: 25px 20px;
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Новини — СБУ RP GTA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4ff;
+      color: #333;
+      padding: 20px;
     }
-
-    article.news-item h3 {
-      font-size: 1.3rem;
+    .news-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
     }
-
-    article.news-item p {
+    .news-item:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 255, 0.3);
+    }
+    .news-item h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+    .news-item p {
+      margin-top: 10px;
+      display: none;
+      line-height: 1.5;
       font-size: 1rem;
+      color: #555;
     }
-  }
-</style>
+    .news-item.active p {
+      display: block;
+      animation: fadeIn 0.3s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Новини та наказы генерала</h1>
+
+  <div class="news-item">
+    <h3>Наказ №1 від 20.06.2025</h3>
+    <p>Генерал наказує посилити патрулювання у центральному районі міста з 21:00 до 6:00 для забезпечення безпеки громадян.</p>
+  </div>
+
+  <div class="news-item">
+    <h3>Оновлення 19.06.2025</h3>
+    <p>Відтепер всі нові агенти мають проходити додаткове навчання з тактичної медицини перед початком служби.</p>
+  </div>
+
+  <div class="news-item">
+    <h3>Наказ №2 від 18.06.2025</h3>
+    <p>Запроваджено нові правила внутрішньої комунікації: всі повідомлення слід надсилати через офіційний Discord сервер СБУ RP GTA.</p>
+  </div>
+
+  <script>
+    // Добавляем обработчик клика по заголовкам
+    document.querySelectorAll('.news-item h3').forEach(title => {
+      title.addEventListener('click', () => {
+        const newsItem = title.parentElement;
+        newsItem.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
