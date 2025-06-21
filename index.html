@@ -14,18 +14,25 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom, #007bff, #ffffff);
+      background: linear-gradient(to bottom, #004085, #ffffff);
       color: #1a1a1a;
-      scroll-behavior: smooth;
+      padding-top: 70px;
+      min-height: 100vh;
+      margin: 0;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* Убираем фон у секций, чтобы градиент body был виден */
-    section, .bg-light {
-      background: transparent !important;
+    .container {
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
     }
 
     nav.navbar {
-      background-color: #007bff;
+      background-color: #004085 !important;
     }
 
     nav.navbar a.nav-link {
@@ -58,6 +65,7 @@
 
     section {
       padding: 60px 0;
+      background: transparent !important;
     }
 
     section h2 {
@@ -286,7 +294,7 @@
     </div>
   </section>
 
-<!-- Звання -->
+  <!-- Звання -->
   <section id="ranks" class="bg-light">
     <div class="container">
       <h2 class="fade-in">Звання</h2>
@@ -322,4 +330,15 @@
   <script>
     function onEntry(entry) {
       entry.forEach(change => {
-        if (change.isIntersecting)
+        if (change.isIntersecting) {
+          change.target.classList.add('visible');
+        }
+      });
+    }
+
+    let options = { threshold: [0.1] };
+    let observer = new IntersectionObserver(onEntry, options);
+    document.querySelectorAll('.fade-in').forEach(elm => observer.observe(elm));
+  </script>
+</body>
+</html>
