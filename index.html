@@ -7,14 +7,12 @@
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f9fbfc;
+      background: linear-gradient(to right, #e6f0ff, #f0f8ff);
       color: #1a1a1a;
       scroll-behavior: smooth;
     }
@@ -76,17 +74,6 @@
       box-shadow: 0 6px 20px rgba(0, 123, 255, 0.7);
     }
 
-    .team-member h5 {
-      margin-top: 15px;
-      font-weight: 600;
-      color: #003366;
-    }
-
-    .team-member p {
-      color: #555;
-      font-style: italic;
-    }
-
     .rank-list {
       max-width: 400px;
       margin: 0 auto;
@@ -102,7 +89,6 @@
       margin-bottom: 15px;
       text-align: center;
       transition: background 0.3s;
-      cursor: default;
     }
 
     .rank-list li:hover {
@@ -112,25 +98,6 @@
     #schedule ul.list-group {
       max-width: 400px;
       margin: 0 auto;
-      border: none;
-      padding: 0;
-    }
-
-    #schedule .list-group-item {
-      font-weight: 600;
-      font-size: 1.1rem;
-      border: 2px solid #007bff;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      cursor: default;
-      transition: background-color 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #schedule .list-group-item:hover {
-      background-color: #cce5ff;
     }
 
     form {
@@ -142,40 +109,15 @@
       box-shadow: 0 4px 25px rgba(0, 123, 255, 0.15);
     }
 
-    form .form-control {
+    form .form-control,
+    form button {
       border-radius: 8px;
-      border: 2px solid #007bff;
-      padding: 10px 15px;
-      font-weight: 500;
-      transition: border-color 0.3s;
-    }
-
-    form .form-control:focus {
-      border-color: #004085;
-      box-shadow: 0 0 8px #007bff;
-      outline: none;
-    }
-
-    form label {
-      font-weight: 600;
-      color: #004085;
     }
 
     form button {
       background-color: #007bff;
-      border: none;
-      padding: 12px 25px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 10px;
       color: white;
-      transition: background-color 0.3s;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    form button:hover {
-      background-color: #004085;
+      font-weight: 700;
     }
 
     .fade-in {
@@ -188,8 +130,29 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Секция с логотипами */
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+      background-color: #f0f8ff;
+    }
+
+    .logo-row img {
+      width: 80px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-row img:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-md sticky-top">
     <div class="container">
@@ -198,131 +161,48 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-<ul class="navbar-nav ms-auto mb-2 mb-md-0">
-  <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
-  <li class="nav-item"><a class="nav-link" href="#ranks">Звания</a></li>
-  <li class="nav-item"><a class="nav-link" href="schedule.html">Графік</a></li> <!-- Ссылка на график -->
-  <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
-  <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li> <!-- Ссылка на новости -->
-</ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ranks">Звання</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Графік</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
+        </ul>
       </div>
     </div>
   </nav>
 
   <header id="header">
-    <img src=logo.png alt="СБУ Логотип" />
+    <img src="logo.png" alt="СБУ Логотип" />
     <h1>Служба Безпеки України Південої України</h1>
   </header>
 
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Наша Команда</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4ff;
-      color: #003366;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 50px;
-    }
-    .avatar {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #007bff;
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-    .avatar:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
-    }
-    .member-name {
-      font-weight: 700;
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-    }
-    .member-rank {
-      font-weight: 600;
-      color: #0055aa;
-      margin-bottom: 0;
-    }
-    .general-container {
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: center;
-    }
-    .colonels-row {
-      margin-bottom: 40px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Наша Команда</h1>
-
-  <div class="general-container">
-    <div>
-      <img src="generaal.png" alt="Генерал Ваня Бішоп" class="avatar" />
-      <div class="member-name">Ваня Бішоп</div>
-      <div class="member-rank">Генерал</div>
+  <section id="team">
+    <div class="container">
+      <h2 class="fade-in">Наша Команда</h2>
+      <div class="text-center mb-5">
+        <img src="generaal.png" alt="Генерал" class="team-member img-fluid" />
+        <h5>Ваня Бішоп</h5>
+        <p>Генерал</p>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Повторяющийся блок -->
+        <!-- Замените src и имена по необходимости -->
+        <div class="col-6 col-md-2 text-center mb-4">
+          <img src="polkovniik.png" class="team-member img-fluid" />
+          <h5>Федя Кисленко</h5>
+          <p>Полковник</p>
+        </div>
+        <div class="col-6 col-md-2 text-center mb-4">
+          <img src="polkovniik.png" class="team-member img-fluid" />
+          <h5>Вакантно</h5>
+          <p>Полковник</p>
+        </div>
+        <!-- Добавьте остальные 4-5 участников по желанию -->
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row colonels-row justify-content-center gx-5">
-    <div class="col-4 col-md-2 text-center">
-      <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-      <div class="member-name">Федя Кисленко</div>
-      <div class="member-rank">Полковник</div>
-    </div>
-    <div class="col-4 col-md-2 text-center">
-      <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-      <div class="member-name">Вакантно</div>
-      <div class="member-rank">Полковник</div>
-    </div>
-    <div class="col-4 col-md-2 text-center">
-      <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-      <div class="member-name">Вакантно</div>
-      <div class="member-rank">Полковник</div>
-    </div>
-  </div>
-
-  <div class="row colonels-row justify-content-center gx-5">
-    <div class="col-4 col-md-2 text-center">
-      <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-      <div class="member-name">Вакантно</div>
-      <div class="member-rank">Полковник</div>
-    </div>
-    <div class="col-4 col-md-2 text-center">
-      <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-      <div class="member-name">Вакантно</div>
-      <div class="member-rank">Полковник</div>
-    </div>
-    <div class="col-4 col-md-2 text-center">
-      <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-      <div class="member-name">Вакантно</div>
-      <div class="member-rank">Полковник</div>
-    </div>
-  </div>
-
-</body>
-</html>
-
-</body>
-</html>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
   <section id="ranks" class="bg-light">
     <div class="container">
       <h2 class="fade-in">Звання</h2>
@@ -348,6 +228,21 @@
     </div>
   </section>
 
+  <!-- Секция с 10 логотипами -->
+  <section class="logo-row">
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+    <img src="logo.png" alt="logo" />
+  </section>
+
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     function onEntry(entry) {
