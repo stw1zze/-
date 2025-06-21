@@ -246,7 +246,7 @@
 </head>
 <body>
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
@@ -264,18 +264,26 @@
     .team-member img {
       width: 140px;
       height: 140px;
-      border-radius: 50%;
+      border-radius: 50%; /* КРУГ */
       object-fit: cover;
-      border: 3px solid #007bff;
+      border: 4px solid #007bff; /* синяя рамка */
       margin-bottom: 10px;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+    .team-member img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 16px rgba(0, 123, 255, 0.9);
     }
     .general {
       margin-bottom: 50px;
+      display: flex;
+      justify-content: center;
     }
     .general h5,
     .colonel h5 {
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: #003366;
       margin-bottom: 5px;
     }
@@ -292,11 +300,63 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
 
+  <h1>СБУ UKRAINE GTA — Наша Команда</h1>
+
+  <!-- Генерал по центру -->
+  <div class="general">
+    <div class="team-member">
+      <img src="general.png" alt="Генерал Ваня Бішоп" />
+      <h5>Генерал Ваня Бішоп</h5>
+      <p>Генерал</p>
+    </div>
+  </div>
+
+  <!-- Первый ряд полковников -->
+  <div class="row colonels-row justify-content-center">
+    <div class="col-4 col-md-2 colonel">
+      <img src="polkovniik.png" alt="Полковник Вакантно" />
+      <h5>Полковник Вакантно</h5>
+      <p>Полковник</p>
+    </div>
+    <div class="col-4 col-md-2 colonel">
+      <img src="polkovniik.png" alt="Полковник Вакантно" />
+      <h5>Полковник Вакантно</h5>
+      <p>Полковник</p>
+    </div>
+    <div class="col-4 col-md-2 colonel">
+      <img src="polkovniik.png" alt="Полковник Вакантно" />
+      <h5>Полковник Вакантно</h5>
+      <p>Полковник</p>
+    </div>
+  </div>
+
+  <!-- Второй ряд полковников -->
+  <div class="row colonels-row justify-content-center">
+    <div class="col-4 col-md-2 colonel">
+      <img src="polkovniik.png" alt="Полковник Вакантно" />
+      <h5>Полковник Вакантно</h5>
+      <p>Полковник</p>
+    </div>
+    <div class="col-4 col-md-2 colonel">
+      <img src="polkovniik.png" alt="Полковник Вакантно" />
+      <h5>Полковник Вакантно</h5>
+      <p>Полковник</p>
+    </div>
+    <div class="col-4 col-md-2 colonel">
+      <img src="polkovniik.png" alt="Полковник Вакантно" />
+      <h5>Полковник Вакантно</h5>
+      <p>Полковник</p>
+    </div>
+  </div>
+
+</body>
+</html>
   <h1>Наша Команда</h1>
 
   <!-- Генерал по центру -->
