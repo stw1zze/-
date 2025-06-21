@@ -24,7 +24,7 @@
       position: absolute;
       width: 80px;
       height: 80px;
-      opacity: 0.6;
+      opacity: 0.7;
       z-index: 0;
     }
 
@@ -32,6 +32,16 @@
       background-color: #007bff;
       z-index: 1;
       position: relative;
+    }
+
+    nav.navbar a.nav-link {
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav.navbar a.nav-link:hover {
+      color: #cce5ff;
     }
 
     header {
@@ -89,12 +99,6 @@
       position: relative;
       z-index: 1;
     }
-
-    .nav-btn {
-      font-weight: 600;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
   </style>
 </head>
 <body>
@@ -121,21 +125,11 @@
 
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="btn btn-outline-light nav-btn" href="index.html#team">Команда</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-light nav-btn" href="index.html#ranks">Звання</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-light nav-btn" href="index.html#schedule">Графік</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-light nav-btn" href="index.html#apply">Заявка</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-light text-primary fw-bold nav-btn" href="news.html">Новини</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html#team">Команда</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#ranks">Звання</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#schedule">Графік</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#apply">Заявка</a></li>
+        <li class="nav-item"><a class="nav-link active" href="news.html">Новини</a></li>
       </ul>
     </div>
   </div>
