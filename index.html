@@ -2,392 +2,172 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Державний Сайт СБУ — Сучасний сайт</title>
-
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Служба безпеки України – Ukraine GTA</title>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f9fbfc;
-      color: #1a1a1a;
-      scroll-behavior: smooth;
-    }
-
-    nav.navbar {
-      background-color: #007bff;
-    }
-
-    nav.navbar a.nav-link {
-      color: white;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav.navbar a.nav-link:hover {
-      color: #cce5ff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #002b64;
     }
 
     header {
-      padding: 60px 0 40px;
+      background: #001b3a;
+      color: white;
+      padding: 20px;
       text-align: center;
-      background: #e6f0ff;
-      box-shadow: 0 3px 10px rgb(0 123 255 / 0.2);
     }
 
     header img {
-      width: 120px;
-      margin-bottom: 20px;
+      height: 80px;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      font-weight: 700;
-      color: #004085;
-      font-size: 2.5rem;
+      margin: 0;
+      font-size: 28px;
     }
 
     section {
-      padding: 60px 0;
-    }
-
-    section h2 {
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #004085;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    /* Команда */
-    .team-member img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-      transition: transform 0.3s ease;
+    .team {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
-    .team-member img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.7);
+    .member {
+      background: #f0f4f8;
+      border-radius: 12px;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .team-member h5 {
-      margin-top: 15px;
-      font-weight: 600;
-      color: #003366;
+    .member img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
 
-    .team-member p {
-      color: #555;
-      font-style: italic;
+    .member h3 {
+      margin: 10px 0 5px;
     }
 
-    /* Звання */
-    <style>
-  .rank-section {
-    background: #f0f4f8;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+    .rank-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
 
-  .rank-section h2 {
-    margin-bottom: 30px;
-    font-size: 28px;
-    color: #002b64;
-  }
-
-  .rank-list {
-    max-width: 400px;
-    margin: 0 auto;
-    list-style: none;
-    padding: 0;
-  }
-
-  .rank-list li {
-    background: #e6f0ff;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    padding: 15px 20px;
-    font-weight: 600;
-    color: #004085;
-    margin-bottom: 15px;
-    text-align: center;
-    transition: background 0.3s;
-    cursor: default;
-  }
-
-  .rank-list li:hover {
-    background: #cce5ff;
-  }
-</style>
-
-<!-- HTML -->
-<section class="rank-section">
-  <h2>Звання</h2>
-  <ul class="rank-list">
-    <li>Курсант</li>
-    <li>Капрал</li>
-    <li>Сержант</li>
-    <li>Старший сержант</li>
-    <li>Молодший лейтенант</li>
-    <li>Лейтенант</li>
-    <li>Старший лейтенант</li>
-    <li>Капітан</li>
-  </ul>
-</section>
-    /* Графік робочого дня */
-    #schedule ul.list-group {
+    .rank-list {
       max-width: 400px;
       margin: 0 auto;
-      border: none;
+      list-style: none;
       padding: 0;
     }
 
-    #schedule .list-group-item {
-      font-weight: 600;
-      font-size: 1.1rem;
+    .rank-list li {
+      background: #e6f0ff;
       border: 2px solid #007bff;
       border-radius: 8px;
-      margin-bottom: 15px;
-      cursor: default;
-      transition: background-color 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #schedule .list-group-item:hover {
-      background-color: #cce5ff;
-    }
-
-    /* Форма заявки */
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 25px rgba(0, 123, 255, 0.15);
-    }
-
-    form .form-control {
-      border-radius: 8px;
-      border: 2px solid #007bff;
-      padding: 10px 15px;
-      font-weight: 500;
-      transition: border-color 0.3s;
-    }
-
-    form .form-control:focus {
-      border-color: #004085;
-      box-shadow: 0 0 8px #007bff;
-      outline: none;
-    }
-
-    form label {
+      padding: 15px 20px;
       font-weight: 600;
       color: #004085;
+      margin-bottom: 15px;
+      text-align: center;
+      transition: background 0.3s;
     }
 
-    form button {
-      background-color: #007bff;
-      border: none;
-      padding: 12px 25px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 10px;
+    .rank-list li:hover {
+      background: #cce5ff;
+    }
+
+    .apply-section {
+      background: #eef5ff;
+    }
+
+    .apply-section a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background-color: #005eff;
       color: white;
-      transition: background-color 0.3s;
-      cursor: pointer;
-      width: 100%;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: 0.3s;
     }
 
-    form button:hover {
-      background-color: #004085;
+    .apply-section a:hover {
+      background-color: #003fbb;
     }
 
-    /* Анимация появления */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Отступы для мобильных */
-    @media (max-width: 576px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      form {
-        padding: 20px;
-      }
+    footer {
+      background: #001b3a;
+      color: white;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Навигация -->
-  <nav class="navbar navbar-expand-md sticky-top">
-    <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="#header">СБУ UKRAINE GTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-controls="navMenu" aria-expanded="false" aria-label="Переключити навігацію">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header>
+    <img src="logo.png" alt="СБУ" />
+    <h1>Служба безпеки України – UKRAINE GTA</h1>
+  </header>
 
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ranks">Звання</a></li>
-          <li class="nav-item"><a class="nav-link" href="#schedule">Графік</a></li>
-          <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Хедер -->
- <header id="header">
-  <img src="logo.png" alt="СБУ Логотип" />
-  <h1>Служба Безпеки України UKRAINE GTA</h1>
-</header>
-
-  <!-- Команда -->
-<section id="team">
-  <div class="container">
-    <h2 class="fade-in">Наша команда</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-3 text-center team-member fade-in">
-        <img src="generaal.png" alt="Генерал Ваня Бішоп" />
-        <h5>Генерал</h5>
+  <section>
+    <h2>Наша команда</h2>
+    <div class="team">
+      <div class="member">
+        <img src="generaal.png" alt="Генерал" />
+        <h3>Генерал</h3>
         <p>Ваня Бішоп</p>
       </div>
-      <div class="col-md-3 text-center team-member fade-in">
+      <div class="member">
         <img src="polkovniik.png" alt="Полковник" />
-        <h5>Полковник</h5>
+        <h3>Полковник</h3>
         <p>Вакантно</p>
       </div>
-      <div class="col-md-3 text-center team-member fade-in">
+      <div class="member">
         <img src="polkovniik.png" alt="Полковник" />
-        <h5>Полковник</h5>
+        <h3>Полковник</h3>
         <p>Вакантно</p>
       </div>
-      <div class="col-md-3 text-center team-member fade-in">
-        <img src="polkovniik.png" alt="Полковник" />
-        <h5>Полковник</h5>
-        <p>Вакантно</p>
-      </div>
- <div class="col-md-3 text-center team-member fade-in">
-        <img src="polkovniik.png" alt="Полковник" />
-        <h5>Полковник</h5>
-        <p>Вакантно</p>
-      </div>
- <div class="col-md-3 text-center team-member fade-in">
-        <img src="polkovniik.png" alt="Полковник" />
-        <h5>Полковник</h5>
-        <p>Вакантно</p>
-      </div>
- <div class="col-md-3 text-center team-member fade-in">
-        <img src="polkovniik.png" alt="Полковник" />
-        <h5>Полковник</h5>
-        <p>Вакантно</p>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- Звания -->
- <section id="ranks" style="background:#f0f4f8; padding:40px 20px; font-family: Arial, sans-serif; text-align:center;">
-  <h2 style="margin-bottom:30px;">Звання</h2>
-  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-    
-    <div style="flex:1 1 200px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-      <p style="font-weight:bold; margin:10px 0;">Курсант</p>
-      <p style="font-weight:bold; margin:10px 0;">Капрал</p>
-    </div>
-
-    <div style="flex:1 1 200px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-      <p style="font-weight:bold; margin:10px 0;">Сержант</p>
-      <p style="font-weight:bold; margin:10px 0;">Старший сержант</p>
-      <p style="font-weight:bold; margin:10px 0;">Молодший лейтенант</p>
-    </div>
-
-    <div style="flex:1 1 200px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-      <p style="font-weight:bold; margin:10px 0;">Лейтенант</p>
-      <p style="font-weight:bold; margin:10px 0;">Старший лейтенант</p>
-      <p style="font-weight:bold; margin:10px 0;">Капітан</p>
-    </div>
-
-  </div>
-</section>
-
-  <!-- Графік Робочого Дня -->
-  <section id="schedule" class="bg-white">
-    <div class="container">
-      <h2 class="fade-in">Графік Робочого Дня</h2>
-      <ul class="list-group fade-in">
-        <li class="list-group-item">
-          Понеділок - П'ятниця
-          <span class="badge bg-primary rounded-pill">9:00 - 21:00</span>
-        </li>
-        <li class="list-group-item">
-          Субота - Неділя
-          <span class="badge bg-primary rounded-pill">10:00 - 20:00</span>
-        </li>
-      </ul>
     </div>
   </section>
 
-  <!-- Заявка -->
- <section id="apply" style="padding: 50px 20px; background: #eef5ff; text-align: center; font-family: Arial, sans-serif;">
-  <h2 style="font-size: 28px; margin-bottom: 15px;">Подати заявку на вступ</h2>
-  <p style="font-size: 16px; margin-bottom: 30px;">Заповніть коротку анкету для вступу до Служби безпеки України у GTA</p>
-  
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4_bpjJhueg-iKfWlk_TiLNRq41yWIi6bSS9dGhYR0U2QG8g/viewform?usp=header" 
-     target="_blank" 
-     style="display: inline-block; padding: 14px 28px; background-color: #005eff; color: #fff; font-size: 16px; border-radius: 8px; text-decoration: none; transition: 0.3s;">
-    Заповнити анкету
-  </a>
-</section>
+  <section class="rank-section">
+    <h2>Звання</h2>
+    <ul class="rank-list">
+      <li>Курсант</li>
+      <li>Капрал</li>
+      <li>Сержант</li>
+      <li>Старший сержант</li>
+      <li>Молодший лейтенант</li>
+      <li>Лейтенант</li>
+      <li>Старший лейтенант</li>
+      <li>Капітан</li>
+    </ul>
+  </section>
 
-  <!-- Bootstrap JS та простий скрипт анімації -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Анімація появи секцій при скроллі
-    function onEntry(entry) {
-      entry.forEach(change => {
-        if (change.isIntersecting) {
-          change.target.classList.add('visible');
-        }
-      });
-    }
+  <section class="apply-section">
+    <h2>Подати заявку на вступ</h2>
+    <p>Заповніть коротку анкету для вступу до СБУ у GTA</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4_bpjJhueg-iKfWlk_TiLNRq41yWIi6bSS9dGhYR0U2QG8g/viewform?usp=header" target="_blank">
+      Заповнити анкету
+    </a>
+  </section>
 
-    let options = { threshold: [0.1] };
-    let observer = new IntersectionObserver(onEntry, options);
-    let elements = document.querySelectorAll('.fade-in');
+  <footer>
+    &copy; 2025 Служба безпеки України – Ukraine GTA. Всі права захищено.
+  </footer>
 
-    for (let elm of elements) {
-      observer.observe(elm);
-    }
-
-    // Обработка отправки формы (просто для примера)
-    document.getElementById('apply-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Заявка відправлена! Дякуємо.');
-      this.reset();
-    });
-  </script>
 </body>
 </html>
