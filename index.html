@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>СБУ UKRAINE GTA — Сучасний сайт</title>
+  <title>СБУ RP GTA — Сучасний сайт</title>
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -62,7 +62,6 @@
       text-align: center;
     }
 
-    /* Команда */
     .team-member img {
       width: 150px;
       height: 150px;
@@ -88,7 +87,6 @@
       font-style: italic;
     }
 
-    /* Звання */
     .rank-list {
       max-width: 400px;
       margin: 0 auto;
@@ -111,7 +109,6 @@
       background: #cce5ff;
     }
 
-    /* Графік робочого дня */
     #schedule ul.list-group {
       max-width: 400px;
       margin: 0 auto;
@@ -136,7 +133,6 @@
       background-color: #cce5ff;
     }
 
-    /* Форма заявки */
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -182,7 +178,6 @@
       background-color: #004085;
     }
 
-    /* Анімація появи */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -193,59 +188,15 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Команда - генералітет и полковники */
-    #team {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    /* Генерал - по центру */
-    .general {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
-
-    /* Ряды полковников по 3 */
-    .colonels-row {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    /* Мобильная адаптация */
-    @media (max-width: 768px) {
-      .colonels-row {
-        flex-wrap: wrap;
-        gap: 30px;
-      }
-      .colonels-row > div {
-        flex: 1 1 45%;
-        max-width: 45%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .colonels-row > div {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- Навигация -->
   <nav class="navbar navbar-expand-md sticky-top">
     <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="#header">СБУ UKRAINE GTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-controls="navMenu" aria-expanded="false" aria-label="Переключити навігацію">
+      <a class="navbar-brand text-white fw-bold" href="#header">СБУ RP GTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
@@ -257,61 +208,34 @@
     </div>
   </nav>
 
-  <!-- Хедер -->
   <header id="header">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg" alt="СБУ Логотип" />
-    <h1>СБУ UKRAINE GTA</h1>
+    <h1>Служба безпеки України UKRAINE GTA</h1>
   </header>
 
-  <!-- Команда -->
   <section id="team">
-    <h2 class="fade-in">Наша команда</h2>
-    <div class="general fade-in">
-      <div class="team-member text-center">
-        <img src="generaal.png" alt="Генерал Ваня Бішоп" />
-        <h5>Генерал Ваня Бішоп</h5>
-        <p>Генерал</p>
-      </div>
-    </div>
-
-    <div class="colonels-row fade-in">
-      <div class="team-member text-center">
-        <img src="polkovniik.png" alt="Полковник 1" />
-        <h5>Полковник 1</h5>
-        <p>Полковник</p>
-      </div>
-      <div class="team-member text-center">
-        <img src="polkovniik.png" alt="Полковник 2" />
-        <h5>Полковник 2</h5>
-        <p>Полковник</p>
-      </div>
-      <div class="team-member text-center">
-        <img src="polkovniik.png" alt="Полковник 3" />
-        <h5>Полковник 3</h5>
-        <p>Полковник</p>
-      </div>
-    </div>
-
-    <div class="colonels-row fade-in">
-      <div class="team-member text-center">
-        <img src="polkovniik.png" alt="Полковник 4" />
-        <h5>Полковник 4</h5>
-        <p>Полковник</p>
-      </div>
-      <div class="team-member text-center">
-        <img src="polkovniik.png" alt="Полковник 5" />
-        <h5>Полковник 5</h5>
-        <p>Полковник</p>
-      </div>
-      <div class="team-member text-center">
-        <img src="polkovniik.png" alt="Полковник 6" />
-        <h5>Полковник 6</h5>
-        <p>Полковник</p>
+    <div class="container">
+      <h2 class="fade-in">Наша команда</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4 text-center team-member fade-in">
+          <img src="generaal.png" alt="Генерал" />
+          <h5>Генерал</h5>
+          <p>Ваня Бішоп</p>
+        </div>
+        <div class="col-md-4 text-center team-member fade-in">
+          <img src="polkovniik.png" alt="Полковник" />
+          <h5>Полковник</h5>
+          <p>Вакантно</p>
+        </div>
+        <div class="col-md-4 text-center team-member fade-in">
+          <img src="polkovniik.png" alt="Полковник" />
+          <h5>Полковник</h5>
+          <p>Вакантно</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Звания -->
   <section id="ranks" class="bg-light">
     <div class="container">
       <h2 class="fade-in">Звання</h2>
@@ -319,4 +243,48 @@
         <li>Курсант</li>
         <li>Капрал</li>
         <li>Сержант</li>
-        <li>Старший серж
+        <li>Старший сержант</li>
+        <li>Молодший лейтенант</li>
+        <li>Лейтенант</li>
+        <li>Старший лейтенант</li>
+        <li>Капітан</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="schedule" class="bg-white">
+    <div class="container">
+      <h2 class="fade-in">Графік Робочого Дня</h2>
+      <ul class="list-group fade-in">
+        <li class="list-group-item">Понеділок - П'ятниця <span class="badge bg-primary rounded-pill">9:00 - 21:00</span></li>
+        <li class="list-group-item">Субота - Неділя <span class="badge bg-primary rounded-pill">10:00 - 20:00</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="apply">
+    <div class="container">
+      <h2 class="fade-in">Подати заявку</h2>
+      <div class="text-center fade-in">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4_bpjJhueg-iKfWlk_TiLNRq41yWIi6bSS9dGhYR0U2QG8g/viewform" target="_blank" class="btn btn-primary btn-lg">Заповнити анкету</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function onEntry(entry) {
+      entry.forEach(change => {
+        if (change.isIntersecting) {
+          change.target.classList.add('visible');
+        }
+      });
+    }
+
+    let options = { threshold: [0.1] };
+    let observer = new IntersectionObserver(onEntry, options);
+    let elements = document.querySelectorAll('.fade-in');
+    elements.forEach(elm => observer.observe(elm));
+  </script>
+</body>
+</html>
