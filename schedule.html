@@ -16,7 +16,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: background-color 0.3s, color 0.3s;
     }
 
     nav {
@@ -53,7 +52,6 @@
       margin-bottom: 50px;
       font-weight: 700;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-      transition: color 0.3s;
     }
 
     .schedule-container {
@@ -63,7 +61,6 @@
       max-width: 500px;
       width: 90%;
       padding: 30px 25px;
-      transition: background-color 0.3s, box-shadow 0.3s;
     }
 
     ul.schedule-list {
@@ -85,7 +82,7 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 3px 8px rgba(0, 123, 255, 0.15);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s ease;
       cursor: default;
     }
 
@@ -113,7 +110,6 @@
       gap: 8px;
       min-width: 120px;
       justify-content: center;
-      transition: background-color 0.3s;
     }
 
     .time-badge i.fa-clock {
@@ -137,80 +133,6 @@
         padding: 5px 10px;
       }
     }
-
-    /* Тёмная тема */
-    body.dark-theme {
-      background: #121212;
-      color: #e0e0e0;
-    }
-
-    body.dark-theme nav {
-      background-color: #1f2937;
-      box-shadow: 0 2px 8px rgba(255,255,255,0.1);
-    }
-
-    body.dark-theme nav a {
-      color: #9ca3af;
-    }
-
-    body.dark-theme nav a:hover {
-      color: #dbeafe;
-    }
-
-    body.dark-theme h1 {
-      color: #93c5fd;
-      text-shadow: none;
-    }
-
-    body.dark-theme .schedule-container {
-      background: #1f2937;
-      box-shadow: 0 6px 18px rgba(147, 197, 253, 0.4);
-    }
-
-    body.dark-theme ul.schedule-list li {
-      background: #374151;
-      border-left-color: #60a5fa;
-      color: #bfdbfe;
-      box-shadow: 0 3px 8px rgba(96, 165, 250, 0.3);
-    }
-
-    body.dark-theme ul.schedule-list li:hover {
-      background: #2563eb;
-      box-shadow: 0 6px 20px rgba(147, 197, 253, 0.6);
-      color: white;
-    }
-
-    body.dark-theme ul.schedule-list li i.fa-clock {
-      color: #60a5fa;
-    }
-
-    body.dark-theme .time-badge {
-      background-color: #3b82f6;
-      box-shadow: 0 2px 8px rgba(147, 197, 253, 0.6);
-      color: white;
-    }
-
-    /* Кнопка переключения темы */
-    #themeToggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background-color: #007bff;
-      border: none;
-      border-radius: 25px;
-      width: 50px;
-      height: 30px;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.5);
-      transition: background-color 0.3s;
-      z-index: 1100;
-    }
-
-    #themeToggle:hover {
-      background-color: #004085;
-    }
   </style>
 </head>
 <body>
@@ -221,8 +143,6 @@
       <a href="news.html">Новини</a>
     </div>
   </nav>
-
-  <button id="themeToggle" title="Переключити тему">🌞</button>
 
   <h1>Графік Робочого Дня</h1>
 
@@ -239,6 +159,54 @@
   </div>
 
  <div class="container mt-5">
-    <h2>Перерви</h2>
-    <ul class="list-unstyled" style="max-width: 400px; margin: 0 auto; padding: 0;">
-      <li style="display: flex; justify-content: space-between; align-items: center; background: #e6f0ff; border-left: 5px solid #007bff; padding: 10px 20px; border-radius: 8px; font-weight: 600; color: #004085; margin-bottom: 12px
+    <h2 class="fade-in">Перерви</h2>
+    <ul class="list-unstyled fade-in" style="max-width: 400px; margin: 0 auto; padding: 0;">
+      <li>
+        <span><i class="fa fa-cutlery"></i> Обідня перерва</span>
+        <div class="time-badge"><i class="fa fa-clock-o"></i> 14:00 - 15:00</div>
+      </li>
+      <li>
+        <span><i class="fa fa-coffee"></i> Вечірня перерва</span>
+        <div class="time-badge"><i class="fa fa-clock-o"></i> 18:00 - 19:00</div>
+      </li>
+    </ul>
+  </div>
+
+ <style>
+    #schedule ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #007bff;
+      padding: 10px 20px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #004085;
+      background: #e6f0ff;
+      cursor: default;
+      transition: background 0.3s ease;
+    }
+    #schedule ul li:hover {
+      background: #cce5ff;
+    }
+    #schedule ul li span i {
+      margin-right: 8px;
+      color: #007bff;
+    }
+    #schedule ul li div.time-badge i {
+      margin-right: 6px;
+      color: #004085;
+    }
+    .mt-5 {
+      margin-top: 3rem !important;
+    }
+  </style>
+</section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
+
+правильно?
