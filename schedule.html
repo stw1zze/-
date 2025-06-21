@@ -4,222 +4,295 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Графік Робочого Дня — СБУ RP GTA</title>
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- FontAwesome для иконок -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f4f8ff;
+      background-color: #f9fbfc;
       color: #1a1a1a;
-      padding-top: 70px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #007bff;
-      padding: 12px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    .dark-theme {
+      background-color: #121212;
+      color: #e0e0e0;
     }
 
-    nav .container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    nav a {
-      color: white;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #cce5ff;
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
     }
 
     h1 {
-      color: #004085;
       text-align: center;
-      margin-bottom: 50px;
-      font-weight: 700;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      color: #004085;
     }
 
-    .schedule-container {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
-      max-width: 500px;
-      width: 90%;
-      padding: 30px 25px;
+    .dark-theme h1 {
+      color: #66aaff;
     }
 
     ul.schedule-list {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
 
     ul.schedule-list li {
       background: #e6f0ff;
-      border-left: 5px solid #007bff;
-      margin-bottom: 20px;
-      padding: 18px 20px;
+      border: 2px solid #007bff;
       border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.15rem;
-      color: #004085;
+      padding: 15px 20px;
+      margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.15);
-      transition: background 0.3s ease;
-      cursor: default;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #004085;
+      transition: background-color 0.3s;
+    }
+
+    .dark-theme ul.schedule-list li {
+      background: #1f2937;
+      border-color: #3b82f6;
+      color: #bfdbfe;
     }
 
     ul.schedule-list li:hover {
-      background: #cce5ff;
-      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+      background-color: #cce5ff;
+      cursor: default;
     }
 
-    ul.schedule-list li i.fa-clock {
-      margin-right: 12px;
-      color: #007bff;
-      font-size: 1.4rem;
+    .dark-theme ul.schedule-list li:hover {
+      background-color: #2563eb;
     }
 
     .time-badge {
       background-color: #007bff;
       color: white;
-      padding: 6px 14px;
-      border-radius: 25px;
+      padding: 6px 12px;
+      border-radius: 20px;
       font-size: 1rem;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
       display: flex;
       align-items: center;
-      gap: 8px;
-      min-width: 120px;
-      justify-content: center;
+      gap: 6px;
+      user-select: none;
     }
 
-    .time-badge i.fa-clock {
+    .dark-theme .time-badge {
+      background-color: #3b82f6;
+    }
+
+    button.copy-btn {
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      cursor: pointer;
       font-size: 1.2rem;
+      transition: color 0.3s;
     }
 
-    @media (max-width: 576px) {
-      .schedule-container {
-        max-width: 95%;
-        padding: 20px 15px;
-      }
-
-      ul.schedule-list li {
-        font-size: 1rem;
-        padding: 15px 12px;
-      }
-
-      .time-badge {
-        min-width: 100px;
-        font-size: 0.9rem;
-        padding: 5px 10px;
-      }
-    }
-
-    .breaks-container {
-      max-width: 400px;
-      margin: 3rem auto 0;
-      padding: 0 15px;
-    }
-
-    .breaks-container h2 {
+    button.copy-btn:hover {
       color: #004085;
-      font-weight: 700;
+    }
+
+    .dark-theme button.copy-btn:hover {
+      color: #bfdbfe;
+    }
+
+    /* Перерыв */
+    .break-section {
+      margin-top: 40px;
+    }
+
+    .break-section h2 {
       text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .breaks-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .breaks-list li {
-      background: #e6f0ff;
-      border-left: 5px solid #007bff;
       margin-bottom: 20px;
-      padding: 15px 20px;
-      border-radius: 8px;
-      font-weight: 600;
       color: #004085;
+    }
+
+    .dark-theme .break-section h2 {
+      color: #66aaff;
+    }
+
+    /* Переключатель темы */
+    .theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 25px;
+      width: 50px;
+      height: 30px;
+      cursor: pointer;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.15);
-      cursor: default;
-      transition: background 0.3s ease;
+      justify-content: space-around;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.5);
+      transition: background-color 0.3s;
+      z-index: 1000;
     }
 
-    .breaks-list li:hover {
-      background: #cce5ff;
-      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+    .theme-toggle:hover {
+      background-color: #004085;
     }
 
-    .breaks-list li i.fa-cutlery,
-    .breaks-list li i.fa-coffee {
-      margin-right: 12px;
-      color: #007bff;
-      font-size: 1.3rem;
+    /* Всплывающее сообщение */
+    #toast {
+      visibility: hidden;
+      min-width: 180px;
+      margin-left: -90px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      border-radius: 25px;
+      padding: 10px 20px;
+      position: fixed;
+      z-index: 1001;
+      left: 50%;
+      bottom: 30px;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="container">
-      <a href="index.html">Головна</a>
-      <a href="news.html">Новини</a>
-      <a href="schedule.html" style="color: #cce5ff; pointer-events: none;">Графік</a>
-    </div>
-  </nav>
+  <button class="theme-toggle" id="themeToggle" title="Переключити тему">🌞</button>
 
-  <h1>Графік Робочого Дня</h1>
+  <div class="container">
+    <h1>Графік Робочого Дня</h1>
 
-  <div class="schedule-container">
-    <ul class="schedule-list">
-      <li><span><i class="fa fa-clock"></i> Понеділок</span> <div class="time-badge"><i class="fa fa-clock"></i> 9:00 - 21:00</div></li>
-      <li><span><i class="fa fa-clock"></i> Вівторок</span> <div class="time-badge"><i class="fa fa-clock"></i> 9:00 - 21:00</div></li>
-      <li><span><i class="fa fa-clock"></i> Середа</span> <div class="time-badge"><i class="fa fa-clock"></i> 9:00 - 21:00</div></li>
-      <li><span><i class="fa fa-clock"></i> Четвер</span> <div class="time-badge"><i class="fa fa-clock"></i> 9:00 - 21:00</div></li>
-      <li><span><i class="fa fa-clock"></i> П’ятниця</span> <div class="time-badge"><i class="fa fa-clock"></i> 9:00 - 21:00</div></li>
-      <li><span><i class="fa fa-clock"></i> Субота</span> <div class="time-badge"><i class="fa fa-clock"></i> 10:00 - 20:00</div></li>
-      <li><span><i class="fa fa-clock"></i> Неділя</span> <div class="time-badge"><i class="fa fa-clock"></i> 10:00 - 20:00</div></li>
+    <ul class="schedule-list" id="workSchedule">
+      <li>
+        Ранковий час
+        <div class="time-badge" title="Ранковий робочий час">
+          9:00 - 14:00
+          <button class="copy-btn" aria-label="Копіювати час ранку" data-copy="9:00 - 14:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
+      </li>
+      <li>
+        Обідня перерва
+        <div class="time-badge" title="Обідня перерва">
+          14:00 - 15:00
+          <button class="copy-btn" aria-label="Копіювати час обідньої перерви" data-copy="14:00 - 15:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
+      </li>
+      <li>
+        Вечірній час
+        <div class="time-badge" title="Вечірній робочий час">
+          15:00 - 18:00
+          <button class="copy-btn" aria-label="Копіювати час вечора" data-copy="15:00 - 18:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
+      </li>
+      <li>
+        Вечерня перерва
+        <div class="time-badge" title="Вечерня перерва">
+          18:00 - 19:00
+          <button class="copy-btn" aria-label="Копіювати час вечірньої перерви" data-copy="18:00 - 19:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
+      </li>
+      <li>
+        Пізній час
+        <div class="time-badge" title="Пізній робочий час">
+          19:00 - 21:00
+          <button class="copy-btn" aria-label="Копіювати пізній час" data-copy="19:00 - 21:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
+      </li>
     </ul>
   </div>
 
-  <div class="breaks-container">
+  <div class="container break-section">
     <h2>Перерви</h2>
-    <ul class="breaks-list">
+    <ul class="schedule-list">
       <li>
-        <span><i class="fa fa-cutlery"></i> Обідня перерва</span>
-        <div class="time-badge"><i class="fa fa-clock"></i> 14:00 - 15:00</div>
+        Обідня перерва
+        <div class="time-badge" title="Обідня перерва">
+          14:00 - 15:00
+          <button class="copy-btn" aria-label="Копіювати час обідньої перерви" data-copy="14:00 - 15:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
       </li>
       <li>
-        <span><i class="fa fa-coffee"></i> Вечірня перерва</span>
-        <div class="time-badge"><i class="fa fa-clock"></i> 18:00 - 19:00</div>
+        Вечерня перерва
+        <div class="time-badge" title="Вечерня перерва">
+          18:00 - 19:00
+          <button class="copy-btn" aria-label="Копіювати час вечірньої перерви" data-copy="18:00 - 19:00">
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
       </li>
     </ul>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <div id="toast">Скопійовано!</div>
+
+  <script>
+    // Тема
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Загрузка темы из localStorage
+    if(localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-theme');
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      if(body.classList.contains('dark-theme')) {
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeToggle.textContent = '🌞';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Копирование текста
+    const copyButtons = document.querySelectorAll('button.copy-btn');
+    const toast = document.getElementById('toast');
+
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        navigator.clipboard.writeText(text).then(() => {
+          // Показать уведомление
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 1500);
+        }).catch(() => {
+          alert('Помилка копіювання');
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
