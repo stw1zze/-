@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Анімований Фон з Логотипами</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -31,12 +30,11 @@
 
     .bg-logo {
       position: absolute;
-      font-size: 80px;
       opacity: 0.07;
-      color: #007bff;
       filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.2));
       user-select: none;
       will-change: transform;
+      transition: opacity 0.3s ease;
     }
 
     h1 {
@@ -57,7 +55,7 @@
   <h1>Привіт! Це анімований фон з логотипами</h1>
 
   <script>
-    const logosCount = 10;
+    const logosCount = 10; // количество логотипов
     const container = document.getElementById('background-logos');
     let vw = window.innerWidth;
     let vh = window.innerHeight;
@@ -69,11 +67,14 @@
     const logos = [];
 
     for(let i = 0; i < logosCount; i++) {
-      const logo = document.createElement('i');
-      logo.className = 'fa-solid fa-shield-halved bg-logo';
-      container.appendChild(logo);
+      const logo = document.createElement('img');
+      logo.src = 'logo.png'; // твой файл логотипа
+      logo.className = 'bg-logo';
 
       const size = random(60, 100);
+      logo.style.width = size + 'px';
+      logo.style.height = 'auto';
+
       const posX = random(0, vw - size);
       const posY = random(0, vh - size);
 
@@ -89,9 +90,10 @@
         size
       });
 
-      logo.style.fontSize = size + 'px';
       logo.style.left = posX + 'px';
       logo.style.top = posY + 'px';
+
+      container.appendChild(logo);
     }
 
     function animate() {
