@@ -1,122 +1,263 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СБУ RP GTA</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>СБУ RP GTA — Сучасний сайт</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
-    body { background-color: #0a0a0f; color: #e0e0e0; }
-    .sidebar { width: 250px; background-color: #0c1c2b; min-height: 100vh; position: fixed; top: 0; left: 0; padding-top: 1rem; }
-    .sidebar .nav-link { color: #e0e0e0; }
-    .sidebar .nav-link.active, .sidebar .nav-link:hover { background-color: #004b8d; }
-    .content { margin-left: 250px; padding: 2rem; }
-    .navbar { background-color: #001a33; }
-    .form-control, .form-control:focus { background-color: #222; color: #fff; border: 1px solid #444; }
-    .list-group-item { background-color: #1c1c1c; border-color: #333; color: #fff; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9fbfc;
+      color: #1a1a1a;
+      scroll-behavior: smooth;
+    }
+
+    nav.navbar {
+      background-color: #007bff;
+    }
+
+    nav.navbar a.nav-link {
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav.navbar a.nav-link:hover {
+      color: #cce5ff;
+    }
+
+    header {
+      padding: 60px 0 40px;
+      text-align: center;
+      background: #e6f0ff;
+      box-shadow: 0 3px 10px rgb(0 123 255 / 0.2);
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-weight: 700;
+      color: #004085;
+      font-size: 2.5rem;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #004085;
+      text-align: center;
+    }
+
+    /* Команда */
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .team-member img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.7);
+    }
+
+    .team-member h5 {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #003366;
+    }
+
+    .team-member p {
+      color: #555;
+      font-style: italic;
+    }
+
+    /* Звания */
+    .rank-list {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .rank-list li {
+      background: #e6f0ff;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      padding: 15px 20px;
+      font-weight: 600;
+      color: #004085;
+      margin-bottom: 15px;
+      text-align: center;
+      transition: background 0.3s;
+      cursor: default;
+    }
+
+    .rank-list li:hover {
+      background: #cce5ff;
+    }
+
+    /* Форма заявки */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 25px rgba(0, 123, 255, 0.15);
+    }
+
+    form .form-control {
+      border-radius: 8px;
+      border: 2px solid #007bff;
+      padding: 10px 15px;
+      font-weight: 500;
+      transition: border-color 0.3s;
+    }
+
+    form .form-control:focus {
+      border-color: #004085;
+      box-shadow: 0 0 8px #007bff;
+      outline: none;
+    }
+
+    form label {
+      font-weight: 600;
+      color: #004085;
+    }
+
+    form button {
+      background-color: #007bff;
+      border: none;
+      padding: 12px 25px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      color: white;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    form button:hover {
+      background-color: #004085;
+    }
+
+    /* Анимация появления */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Отступы для мобильных */
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="sidebar d-flex flex-column p-3">
-    <div class="text-center mb-4">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg" width="70" alt="СБУ">
-      <h5 class="mt-2">СБУ RP GTA</h5>
+
+  <!-- Навигация -->
+  <nav class="navbar navbar-expand-md sticky-top">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#header">СБУ RP GTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Переключити навігацію">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ranks">Звання</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="nav nav-pills flex-column">
-      <a class="nav-link active" href="#news">Новини</a>
-      <a class="nav-link" href="#team">Склад</a>
-      <a class="nav-link" href="#ranks">Звання</a>
-      <a class="nav-link" href="#apply">Заявка</a>
-      <a class="nav-link" href="#admin">Адмінпанель</a>
-    </nav>
-  </div>
+  </nav>
 
-  <div class="content">
-    <nav class="navbar navbar-dark mb-4">
-      <div class="container-fluid">
-        <span class="navbar-brand">Панель керування СБУ</span>
+  <!-- Хедер -->
+  <header id="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Emblem_of_the_Security_Service_of_Ukraine.svg" alt="СБУ Логотип" />
+    <h1>Служба безпеки України RP GTA</h1>
+  </header>
+
+  <!-- Команда -->
+  <section id="team">
+    <div class="container">
+      <h2 class="fade-in">Наша команда</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4 text-center team-member fade-in">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Александр" />
+          <h5>Олександр Шевченко</h5>
+          <p>Директор</p>
+        </div>
+        <div class="col-md-4 text-center team-member fade-in">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ірина" />
+          <h5>Ірина Коваль</h5>
+          <p>Агент</p>
+        </div>
+        <div class="col-md-4 text-center team-member fade-in">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Віталій" />
+          <h5>Віталій Петров</h5>
+          <p>Старший агент</p>
+        </div>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <section id="news">
-      <h3>📰 Новини</h3>
-      <div class="card bg-dark text-white mb-3">
-        <div class="card-body">Тут буде стрічка новин...</div>
-      </div>
-    </section>
-
-    <section id="team">
-      <h3>👥 Склад</h3>
-      <div id="team-list" class="row"></div>
-    </section>
-
-    <section id="ranks">
-      <h3>🏅 Звання</h3>
-      <ul class="list-group">
-        <li class="list-group-item">Стажер</li>
-        <li class="list-group-item">Агент</li>
-        <li class="list-group-item">Старший агент</li>
-        <li class="list-group-item">Інспектор</li>
-        <li class="list-group-item">Керівник відділу</li>
+  <!-- Звания -->
+  <section id="ranks" class="bg-light">
+    <div class="container">
+      <h2 class="fade-in">Звання</h2>
+      <ul class="rank-list fade-in list-unstyled">
+        <li>Стажер</li>
+        <li>Агент</li>
+        <li>Старший агент</li>
+        <li>Інспектор</li>
+        <li>Керівник відділу</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section id="apply" class="mt-4">
-      <h3>📄 Заявка</h3>
-      <form id="apply-form" class="bg-dark p-3 rounded">
+  <!-- Заявка -->
+  <section id="apply">
+    <div class="container">
+      <h2 class="fade-in">Подати заявку</h2>
+      <form id="apply-form" class="fade-in">
         <div class="mb-3">
-          <label class="form-label">Discord ID</label>
-          <input type="text" class="form-control" id="discord-id" required>
+          <label for="discordID" class="form-label">Discord ID</label>
+          <input type="text" class="form-control" id="discordID" placeholder="Введіть Discord ID" required />
         </div>
         <div class="mb-3">
-          <label class="form-label">Чому хочеш вступити?</label>
-          <textarea class="form-control" id="reason" required></textarea>
+          <label for="reason" class="form-label">Чому хочеш вступити?</label>
+          <textarea class="form-control" id="reason" rows="4" placeholder="Розкажи трохи..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Надіслати</button>
-        <div id="form-status" class="mt-2"></div>
-      </form>
-    </section>
-
-    <section id="admin" class="mt-4">
-      <h3>⚙️ Адмінпанель</h3>
-      <button class="btn btn-success mb-2" onclick="addAgent('Іван Петренко', 'Агент')">+ Додати Агента</button>
-    </section>
-  </div>
-
-  <script>
-    const webhookURL = "https://discord.com/api/webhooks/your_webhook_here"; // ВСТАВ СВІЙ WEBHOOK
-
-    document.getElementById("apply-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const discordID = document.getElementById("discord-id").value;
-      const reason = document.getElementById("reason").value;
-
-      fetch(webhookURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: `Нова заявка до СБУ:\nDiscord: ${discordID}\nПричина: ${reason}` })
-      }).then(res => {
-        document.getElementById("form-status").textContent = "✅ Заявку відправлено!";
-        document.getElementById("apply-form").reset();
-      }).catch(() => {
-        document.getElementById("form-status").textContent = "❌ Помилка при відправленні!";
-      });
-    });
-
-    function addAgent(name, rank) {
-      const card = document.createElement("div");
-      card.className = "col-md-4 mb-3";
-      card.innerHTML = `
-        <div class="card bg-dark text-white h-100">
-          <div class="card-body text-center">
-            <img src="https://via.placeholder.com/100" class="rounded-circle mb-2" alt="">
-            <h5>${name}</h5>
-            <p>${rank}</p>
-          </div>
-        </div>`;
-      document.getElementById("team-list").appendChild(card);
-    }
-  </script>
-</body>
-</html>
+        <button type="submit">Відправити заявку</button>
+       
