@@ -14,11 +14,9 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom, #004085, #ffffff);
+      background: #f9fbfc;
       color: #1a1a1a;
-      padding-top: 70px;
-      min-height: 100vh;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     nav.navbar {
@@ -38,7 +36,7 @@
     header {
       padding: 60px 0 40px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.8);
+      background: #e6f0ff;
       box-shadow: 0 3px 10px rgb(0 123 255 / 0.2);
     }
 
@@ -55,7 +53,6 @@
 
     section {
       padding: 60px 0;
-      background: rgba(255, 255, 255, 0.8);
     }
 
     section h2 {
@@ -128,6 +125,30 @@
       background: #cce5ff;
     }
 
+    #schedule ul.list-group {
+      max-width: 400px;
+      margin: 0 auto;
+      border: none;
+      padding: 0;
+    }
+
+    #schedule .list-group-item {
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      cursor: default;
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #schedule .list-group-item:hover {
+      background-color: #cce5ff;
+    }
+
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -188,7 +209,7 @@
 <body>
 
   <!-- Навігація -->
-  <nav class="navbar navbar-expand-md fixed-top">
+  <nav class="navbar navbar-expand-md sticky-top">
     <div class="container">
       <a class="navbar-brand text-white fw-bold" href="#header">Головна Сторінка</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -230,6 +251,12 @@
           <div class="member-name">Федя Кисленко</div>
           <div class="member-rank">Полковник</div>
         </div>
+        <!-- Вакантні місця -->
+        <div class="col-4 col-md-2 text-center">
+          <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
+          <div class="member-name">Вакантно</div>
+          <div class="member-rank">Полковник</div>
+        </div>
         <div class="col-4 col-md-2 text-center">
           <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
           <div class="member-name">Вакантно</div>
@@ -254,8 +281,8 @@
     </div>
   </section>
 
-  <!-- Звання -->
-  <section id="ranks">
+<!-- Звання -->
+  <section id="ranks" class="bg-light">
     <div class="container">
       <h2 class="fade-in">Звання</h2>
       <ul class="rank-list fade-in list-unstyled">
@@ -267,10 +294,10 @@
         <li>Лейтенант</li>
         <li>Старший лейтенант</li>
         <li>Капітан</li>
-        <li>Майор</li>
-        <li>Підполковник</li>
-        <li>Полковник</li>
-        <li>Генерал</li>
+ <li>Майор</li>
+ <li>Підполковник</li>
+ <li>Полковник</li>
+ <li>Генерал</li>
       </ul>
     </div>
   </section>
