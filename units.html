@@ -13,6 +13,59 @@
       color: #1a1a1a;
       padding-top: 70px;
       min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Фон з логотипами */
+    .background-logos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+      background: linear-gradient(to bottom, #004085, #ffffff);
+    }
+
+    .background-logos img {
+      position: absolute;
+      width: 80px;
+      opacity: 0.1;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .logo1 { top: 10%; left: 5%; animation-name: moveX1; animation-duration: 12s; }
+    .logo2 { top: 25%; left: 20%; animation-name: moveY1; animation-duration: 15s; }
+    .logo3 { top: 40%; left: 35%; animation-name: moveX2; animation-duration: 10s; }
+    .logo4 { top: 55%; left: 50%; animation-name: moveY2; animation-duration: 14s; }
+    .logo5 { top: 70%; left: 65%; animation-name: moveX1; animation-duration: 11s; }
+    .logo6 { top: 85%; left: 80%; animation-name: moveY1; animation-duration: 13s; }
+    .logo7 { top: 15%; left: 75%; animation-name: moveX2; animation-duration: 16s; }
+    .logo8 { top: 30%; left: 90%; animation-name: moveY2; animation-duration: 12s; }
+    .logo9 { top: 60%; left: 10%; animation-name: moveX1; animation-duration: 14s; }
+    .logo10 { top: 80%; left: 30%; animation-name: moveY1; animation-duration: 15s; }
+
+    @keyframes moveX1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(20px); }
+    }
+    @keyframes moveX2 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-20px); }
+    }
+    @keyframes moveY1 {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(15px); }
+    }
+    @keyframes moveY2 {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
     }
 
     nav {
@@ -49,6 +102,8 @@
       margin-bottom: 40px;
       font-weight: 700;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
 
     .units-container {
@@ -57,6 +112,8 @@
       justify-content: center;
       gap: 30px;
       padding: 0 20px 40px;
+      position: relative;
+      z-index: 1;
     }
 
     .unit-card {
@@ -101,6 +158,20 @@
   </style>
 </head>
 <body>
+
+  <!-- Фонові логотипи -->
+  <div class="background-logos" aria-hidden="true">
+    <img src="logo.png" alt="" class="logo1" />
+    <img src="logo.png" alt="" class="logo2" />
+    <img src="logo.png" alt="" class="logo3" />
+    <img src="logo.png" alt="" class="logo4" />
+    <img src="logo.png" alt="" class="logo5" />
+    <img src="logo.png" alt="" class="logo6" />
+    <img src="logo.png" alt="" class="logo7" />
+    <img src="logo.png" alt="" class="logo8" />
+    <img src="logo.png" alt="" class="logo9" />
+    <img src="logo.png" alt="" class="logo10" />
+  </div>
 
   <nav>
     <div class="container">
