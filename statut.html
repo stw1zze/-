@@ -1,158 +1,87 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>СБУ RP GTA</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Загальний статут співробітників МВС</title>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom, #004085, #ffffff);
-      color: #1a1a1a;
-      padding-top: 70px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f5f5f5;
+      color: #222;
     }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #007bff;
-      padding: 12px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    h1, h2, h3 {
+      color: #003366;
     }
-
-    nav .container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+    ul, ol {
+      padding-left: 1.5rem;
     }
-
-    nav a {
-      color: white;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #cce5ff;
-    }
-
-    h1 {
-      color: #004085;
-      text-align: center;
-      margin: 30px 0;
-      font-weight: 700;
-    }
-
-    .content-section {
-      display: none;
-      max-width: 1000px;
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
       background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,123,255,0.2);
-      margin-bottom: 40px;
-    }
-
-    .content-section.active {
-      display: block;
-    }
-
-    .section-title {
-      color: #004085;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .statute-text {
-      white-space: pre-wrap;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 576px) {
-      nav .container {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .content-section {
-        padding: 20px 15px;
-      }
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
+  <h1>Про загальний статут співробітників<br>МІНІСТЕРСТВА ВНУТРІШНІХ СПРАВ</h1>
 
-  <nav>
-    <div class="container">
-      <a href="#" onclick="showSection('schedule')">Графік</a>
-      <a href="#" onclick="showSection('statute')">Статут МВС</a>
-    </div>
-  </nav>
+  <section>
+    <h2>Розділ 1. Загальні положення</h2>
+    <p>Метою цього наказу є підтримання правопорядку та статутних відносин державних організацій. Покарання обирається керівником державної організації МВС залежно від тяжкості провини (злочину) співробітника...</p>
+  </section>
 
-  <h1>СБУ RP GTA</h1>
+  <section>
+    <h2>Розділ 2. Категорично забороняється:</h2>
+    <ol>
+      <li>Заборонено порушувати законодавство України.</li>
+      <li>Цього статуту повинен дотримуватися кожен працівник МВС...</li>
+      <!-- ... до пункту 1.37 -->
+    </ol>
+  </section>
 
-  <!-- Графік -->
-  <div id="schedule" class="content-section active">
-    <h2 class="section-title">Графік Робочого Дня</h2>
-    <ul class="schedule-list list-unstyled">
-      <li><i class="fa-solid fa-clock"></i> Патрулювання — <span class="time-badge"><i class="fa-solid fa-clock"></i> 10:00–14:00</span></li>
-      <li><i class="fa-solid fa-clock"></i> Пости/Затримання — <span class="time-badge"><i class="fa-solid fa-clock"></i> 14:00–18:00</span></li>
-      <li><i class="fa-solid fa-clock"></i> Патрулі + спецоперації — <span class="time-badge"><i class="fa-solid fa-clock"></i> 18:00–21:00</span></li>
-      <li><i class="fa-solid fa-clock"></i> Відпочинок/Тренування — <span class="time-badge"><i class="fa-solid fa-clock"></i> 21:00–23:00</span></li>
-    </ul>
-  </div>
+  <section>
+    <h2>Розділ 3. Службові обов'язки</h2>
+    <ol start="1">
+      <li>Підтримувати рівень своєї підготовки...</li>
+      <li>Поважати честь і гідність інших співробітників...</li>
+      <!-- ... до пункту 2.15 -->
+    </ol>
+  </section>
 
-  <!-- Статут МВС -->
-  <div id="statute" class="content-section">
-    <h2 class="section-title">Статут МВС</h2>
-    <div class="statute-text">
-Розділ 1. Загальні положення
-Метою цього наказу є підтримання правопорядку та статутних відносин державних організацій...
+  <section>
+    <h2>Розділ 4. Робочий/вільний/обідній час</h2>
+    <ol>
+      <li>У вільний від роботи час працівники мають право...</li>
+      <!-- ... до пункту 3.5 -->
+    </ol>
+  </section>
 
-(повний текст статуту вставляється тут)
+  <section>
+    <h2>Розділ 5. Використання транспорту</h2>
+    <ol>
+      <li>Заборонено розкидати, залишати транспорт де попало...</li>
+      <!-- ... до пункту 4.4 -->
+    </ol>
+  </section>
 
-Розділ 2. Категорично забороняється:
-1.1 Заборонено порушувати законодавство України.
-1.2 Цього статуту повинен дотримуватися кожен працівник МВС.
-...
+  <section>
+    <h2>РОЗДІЛ 6: СУБОРДИНАЦІЯ</h2>
+    <ol>
+      <li>Кожна службова особа зобов'язана підпорядковуватися...</li>
+      <!-- ... до пункту 5.7 -->
+    </ol>
+  </section>
 
-Розділ 3. Службові обов’язки
-...
-
-Розділ 4. Робочий/вільний/обідній час
-...
-
-Розділ 5. Використання транспорту
-...
-
-Розділ 6. Субординація
-...
-
-Розділ 7. Порядок відпрацювання орієнтування (СБУ)
-...
-    </div>
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-
+  <section>
+    <h2>РОЗДІЛ 7: ПОРЯДОК ВІДПРАЦЮВАННЯ ОРІЄНТУВАННЯ (СБУ)</h2>
+    <ol>
+      <li>Співробітники можуть відпрацьовувати орієнтування...</li>
+      <!-- ... до пункту 6.4 -->
+    </ol>
+  </section>
 </body>
 </html>
