@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Коди та Тен-Коди — СБУ RP GTA</title>
+  <title>Коди та ТенКоди — СБУ RP GTA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
@@ -13,10 +13,6 @@
       color: #1a1a1a;
       padding-top: 70px;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
     }
 
     nav {
@@ -26,7 +22,6 @@
       background-color: #007bff;
       padding: 12px 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     nav .container {
@@ -40,7 +35,6 @@
       font-weight: 600;
       font-size: 1.1rem;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -50,85 +44,112 @@
     h1 {
       color: #004085;
       text-align: center;
-      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-bottom: 25px;
       font-weight: 700;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     }
 
-    .code-section {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
-      max-width: 600px;
-      width: 90%;
-      padding: 25px;
-      margin-bottom: 40px;
+    .card {
+      border-left: 6px solid #007bff;
+      box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
     }
 
-    .code-section h2 {
-      font-size: 1.5rem;
-      color: #004085;
-      margin-bottom: 15px;
+    .card:hover {
+      transform: scale(1.02);
     }
 
-    .code-section ul {
-      list-style: none;
-      padding: 0;
+    .card-body i {
+      color: #007bff;
+      margin-right: 10px;
     }
 
-    .code-section li {
-      padding: 10px;
-      background: #e6f0ff;
-      margin-bottom: 10px;
-      border-left: 5px solid #007bff;
-      border-radius: 6px;
+    .section-title {
+      font-size: 1.4rem;
       font-weight: 600;
-      box-shadow: 0 3px 6px rgba(0, 123, 255, 0.1);
+      margin-bottom: 15px;
+      text-align: center;
+      color: #003366;
+    }
+
+    .container {
+      max-width: 800px;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="container">
-      <a href="index.html">Головна</a>
-      <a href="news.html">Новини</a>
-      <a href="kody-tenkody.html">Коди та Тен-Коди</a>
-    </div>
-  </nav>
+<nav>
+  <div class="container">
+    <a href="index.html">Головна</a>
+    <a href="news.html">Новини</a>
+    <a href="codes.html">Коди</a>
+  </div>
+</nav>
 
-  <h1>Коди та Тен-Коди</h1>
+<div class="container mt-5">
+  <h1>Коди та ТенКоди</h1>
 
-  <div class="code-section">
-    <h2>Коди</h2>
-    <ul>
-      <li>0 — Негайно потрібне пікріплення (Перестрілка, критична ситуація і т.д)</li>
-      <li>1 — Стабільний стан</li>
-      <li>2 — Підозріла людина</li>
-      <li>3 — Тривога</li>
-      <li>4 — Напад</li>
-      <li>5 — Загальний збір в ГУ СБУ</li>
-      <li>6 — Збір співробітників керівного складу</li>
-    </ul>
+  <div class="section-title">Коди</div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-bolt"></i> <strong>Код 0:</strong> Негайно потрібне підкріплення (Перестрілка, критична ситуація)</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-check-circle"></i> <strong>Код 1:</strong> Стабільний стан</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-user-secret"></i> <strong>Код 2:</strong> Підозріла особа</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-bell"></i> <strong>Код 3:</strong> Тривога</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-hand-fist"></i> <strong>Код 4:</strong> Напад</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-building"></i> <strong>Код 5:</strong> Загальний збір в ГУ СБУ</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-user-tie"></i> <strong>Код 6:</strong> Збір керівного складу</div>
   </div>
 
-  <div class="code-section">
-    <h2>Тен-Коди</h2>
-    <ul>
-      <li>10-4 — Прийнято, Саме так, Виконую</li>
-      <li>10-9 — Повторіть / Повторюю</li>
-      <li>10-10 — Ніяк ні, заперечую</li>
-      <li>10-34 — Потрібна допомога</li>
-      <li>10-20 — Місце знаходження</li>
-      <li>4-1 — Виїхав в орієнтування</li>
-      <li>4-2 — Продовжую орієнтування</li>
-      <li>4-3 — Закінчив орієнтування</li>
-      <li>5-1 — Розпочав переслідування</li>
-      <li>5-2 — Продовжую переслідування</li>
-      <li>5-3 — Закінчив переслідування</li>
-    </ul>
+  <div class="section-title mt-4">ТенКоди</div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-thumbs-up"></i> <strong>10-4:</strong> Прийнято, виконую</div>
   </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-redo"></i> <strong>10-9:</strong> Повторіть</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-ban"></i> <strong>10-10:</strong> Ні, заперечую</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-life-ring"></i> <strong>10-34:</strong> Потрібна допомога</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-map-marker-alt"></i> <strong>10-20:</strong> Місцезнаходження</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-car"></i> <strong>4-1:</strong> Виїхав в орієнтування</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-route"></i> <strong>4-2:</strong> Продовжую орієнтування</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-flag-checkered"></i> <strong>4-3:</strong> Завершив орієнтування</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-bolt"></i> <strong>5-1:</strong> Розпочав переслідування</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-forward"></i> <strong>5-2:</strong> Продовжую переслідування</div>
+  </div>
+  <div class="card">
+    <div class="card-body"><i class="fas fa-stop-circle"></i> <strong>5-3:</strong> Завершив переслідування</div>
+  </div>
+</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
