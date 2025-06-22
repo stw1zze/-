@@ -1,1 +1,147 @@
 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Підрозділи — СБУ RP GTA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #004085, #ffffff);
+      color: #1a1a1a;
+      padding-top: 70px;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #007bff;
+      padding: 12px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #cce5ff;
+    }
+
+    h1 {
+      color: #004085;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .units-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px 40px;
+    }
+
+    .unit-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .unit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .unit-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .unit-card h3 {
+      color: #004085;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .unit-card p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    @media (max-width: 576px) {
+      .units-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Головна Сторінка</a>
+      <a href="news.html">Новини</a>
+      <a href="schedule.html">Графік Роботи</a>
+      <a href="#apply">Заявка</a>
+      <a href="ten-codes.html">Коди Та ТенКоди</a>
+      <a href="units.html">Підрозділи</a>
+    </div>
+  </nav>
+
+  <h1>Підрозділи та Керівники</h1>
+
+  <div class="units-container">
+    <div class="unit-card">
+      <img src="nasb-colonel.jpg" alt="Полковник НАСБ">
+      <h3>НАСБ</h3>
+      <p>Полковник Іванов О.М.<br>Національне агентство спецбезпеки</p>
+    </div>
+
+    <div class="unit-card">
+      <img src="cso-a.jpg" alt="Керівник ЦСО А">
+      <h3>ЦСО «А»</h3>
+      <p>Полковник Петренко В.А.<br>Центр спеціальних операцій "Альфа"</p>
+    </div>
+
+    <div class="unit-card">
+      <img src="dkr.jpg" alt="Керівник ДКР">
+      <h3>ДКР</h3>
+      <p>Полковник Сидорчук М.Ю.<br>Департамент контррозвідки</p>
+    </div>
+
+    <div class="unit-card">
+      <img src="dbr.jpg" alt="Керівник ДБР">
+      <h3>ДБР</h3>
+      <p>Полковник Ковальчук Р.Б.<br>Державне бюро розслідувань</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
