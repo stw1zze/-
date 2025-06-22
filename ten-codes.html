@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Коди та ТенКоди — СБУ RP GTA</title>
+  <title>Коди та Тен-Коди — СБУ RP GTA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
@@ -13,6 +13,11 @@
       color: #1a1a1a;
       padding-top: 70px;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
     }
 
     nav {
@@ -22,6 +27,7 @@
       background-color: #007bff;
       padding: 12px 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     nav .container {
@@ -35,6 +41,7 @@
       font-weight: 600;
       font-size: 1.1rem;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -44,112 +51,158 @@
     h1 {
       color: #004085;
       text-align: center;
-      margin-top: 30px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     }
 
-    .card {
-      border-left: 6px solid #007bff;
-      box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+    .codes-container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+      max-width: 700px;
+      width: 90%;
+      padding: 30px 25px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
     }
 
-    .card:hover {
-      transform: scale(1.02);
-    }
-
-    .card-body i {
+    .codes-container h2 {
       color: #007bff;
-      margin-right: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
+    ul.code-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.code-list li {
+      background: #e6f0ff;
+      border-left: 5px solid #007bff;
       margin-bottom: 15px;
-      text-align: center;
-      color: #003366;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #004085;
+      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.15);
+      transition: background 0.3s ease;
     }
 
-    .container {
-      max-width: 800px;
+    ul.code-list li:hover {
+      background: #cce5ff;
+    }
+
+    .background-logos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+      background: linear-gradient(to bottom, #004085, #ffffff);
+    }
+
+    .background-logos img {
+      position: absolute;
+      width: 80px;
+      opacity: 0.1;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .logo1 { top: 10%; left: 5%; animation-name: moveX1; animation-duration: 12s; }
+    .logo2 { top: 25%; left: 20%; animation-name: moveY1; animation-duration: 15s; }
+    .logo3 { top: 40%; left: 35%; animation-name: moveX2; animation-duration: 10s; }
+    .logo4 { top: 55%; left: 50%; animation-name: moveY2; animation-duration: 14s; }
+    .logo5 { top: 70%; left: 65%; animation-name: moveX1; animation-duration: 11s; }
+    .logo6 { top: 85%; left: 80%; animation-name: moveY1; animation-duration: 13s; }
+    .logo7 { top: 15%; left: 75%; animation-name: moveX2; animation-duration: 16s; }
+    .logo8 { top: 30%; left: 90%; animation-name: moveY2; animation-duration: 12s; }
+    .logo9 { top: 60%; left: 10%; animation-name: moveX1; animation-duration: 14s; }
+    .logo10 { top: 80%; left: 30%; animation-name: moveY1; animation-duration: 15s; }
+
+    @keyframes moveX1 {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(20px); }
+    }
+    @keyframes moveX2 {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-20px); }
+    }
+    @keyframes moveY1 {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(15px); }
+    }
+    @keyframes moveY2 {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <a href="index.html">Головна</a>
-    <a href="news.html">Новини</a>
-    <a href="codes.html">Коди</a>
-  </div>
-</nav>
-
-<div class="container mt-5">
-  <h1>Коди та ТенКоди</h1>
-
-  <div class="section-title">Коди</div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-bolt"></i> <strong>Код 0:</strong> Негайно потрібне підкріплення (Перестрілка, критична ситуація)</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-check-circle"></i> <strong>Код 1:</strong> Стабільний стан</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-user-secret"></i> <strong>Код 2:</strong> Підозріла особа</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-bell"></i> <strong>Код 3:</strong> Тривога</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-hand-fist"></i> <strong>Код 4:</strong> Напад</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-building"></i> <strong>Код 5:</strong> Загальний збір в ГУ СБУ</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-user-tie"></i> <strong>Код 6:</strong> Збір керівного складу</div>
+  <div class="background-logos" aria-hidden="true">
+    <img src="logo.png" alt="" class="logo1" />
+    <img src="logo.png" alt="" class="logo2" />
+    <img src="logo.png" alt="" class="logo3" />
+    <img src="logo.png" alt="" class="logo4" />
+    <img src="logo.png" alt="" class="logo5" />
+    <img src="logo.png" alt="" class="logo6" />
+    <img src="logo.png" alt="" class="logo7" />
+    <img src="logo.png" alt="" class="logo8" />
+    <img src="logo.png" alt="" class="logo9" />
+    <img src="logo.png" alt="" class="logo10" />
   </div>
 
-  <div class="section-title mt-4">ТенКоди</div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-thumbs-up"></i> <strong>10-4:</strong> Прийнято, виконую</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-redo"></i> <strong>10-9:</strong> Повторіть</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-ban"></i> <strong>10-10:</strong> Ні, заперечую</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-life-ring"></i> <strong>10-34:</strong> Потрібна допомога</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-map-marker-alt"></i> <strong>10-20:</strong> Місцезнаходження</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-car"></i> <strong>4-1:</strong> Виїхав в орієнтування</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-route"></i> <strong>4-2:</strong> Продовжую орієнтування</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-flag-checkered"></i> <strong>4-3:</strong> Завершив орієнтування</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-bolt"></i> <strong>5-1:</strong> Розпочав переслідування</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-forward"></i> <strong>5-2:</strong> Продовжую переслідування</div>
-  </div>
-  <div class="card">
-    <div class="card-body"><i class="fas fa-stop-circle"></i> <strong>5-3:</strong> Завершив переслідування</div>
-  </div>
-</div>
+  <nav>
+    <div class="container">
+      <a href="index.html">Головна</a>
+      <a href="news.html">Новини</a>
+    </div>
+  </nav>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <h1>Коди та Тен-Коди</h1>
+
+  <div class="codes-container">
+    <h2>Коди</h2>
+    <ul class="code-list">
+      <li>0 — Негайно потрібне підкріплення (Перестрілка, критична ситуація і т.д)</li>
+      <li>1 — Стабільний стан</li>
+      <li>2 — Підозріла особа</li>
+      <li>3 — Тривога</li>
+      <li>4 — Напад</li>
+      <li>5 — Загальний збір в ГУ СБУ</li>
+      <li>6 — Збір керівного складу</li>
+    </ul>
+  </div>
+
+  <div class="codes-container">
+    <h2>Тен-Коди</h2>
+    <ul class="code-list">
+      <li>10-4 — Прийнято, Саме так, Виконую</li>
+      <li>10-9 — Повторіть / Повторюю</li>
+      <li>10-10 — Ні, заперечую</li>
+      <li>10-20 — Моє місце знаходження</li>
+      <li>10-34 — Потрібна допомога</li>
+      <li>4-1 — Виїхав за орієнтуванням</li>
+      <li>4-2 — Продовжую орієнтування</li>
+      <li>4-3 — Закінчив орієнтування</li>
+      <li>5-1 — Розпочав переслідування</li>
+      <li>5-2 — Продовжую переслідування</li>
+      <li>5-3 — Завершив переслідування</li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
