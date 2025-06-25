@@ -11,9 +11,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
-<!-- Font Awesome для Telegram -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
   <style>
     body {
@@ -21,6 +20,30 @@
       background: #f9fbfc;
       color: #1a1a1a;
       scroll-behavior: smooth;
+    }
+
+    .background-logos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .logo-bg {
+      position: absolute;
+      width: 100px;
+      opacity: 0.07;
+      filter: blur(1px);
+      transform: rotate(calc(var(--r, 0deg)));
+    }
+
+    nav, header, section, footer {
+      position: relative;
+      z-index: 1;
     }
 
     nav.navbar {
@@ -82,7 +105,6 @@
       box-shadow: 0 6px 20px rgba(0, 123, 255, 0.7);
     }
 
-    .team-member h5,
     .member-name {
       margin-top: 15px;
       font-weight: 600;
@@ -90,26 +112,10 @@
       font-size: 1.3rem;
     }
 
-    .team-member p,
     .member-rank {
       color: #0055aa;
       font-style: italic;
       font-weight: 600;
-    }
-
-    .general-container {
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .colonels-row {
-      margin-bottom: 40px;
-    }
-
-    .rank-list {
-      max-width: 400px;
-      margin: 0 auto;
     }
 
     .rank-list li {
@@ -129,75 +135,6 @@
       background: #cce5ff;
     }
 
-    #schedule ul.list-group {
-      max-width: 400px;
-      margin: 0 auto;
-      border: none;
-      padding: 0;
-    }
-
-    #schedule .list-group-item {
-      font-weight: 600;
-      font-size: 1.1rem;
-      border: 2px solid #007bff;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      cursor: default;
-      transition: background-color 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #schedule .list-group-item:hover {
-      background-color: #cce5ff;
-    }
-
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 25px rgba(0, 123, 255, 0.15);
-    }
-
-    form .form-control {
-      border-radius: 8px;
-      border: 2px solid #007bff;
-      padding: 10px 15px;
-      font-weight: 500;
-      transition: border-color 0.3s;
-    }
-
-    form .form-control:focus {
-      border-color: #004085;
-      box-shadow: 0 0 8px #007bff;
-      outline: none;
-    }
-
-    form label {
-      font-weight: 600;
-      color: #004085;
-    }
-
-    form button {
-      background-color: #007bff;
-      border: none;
-      padding: 12px 25px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 10px;
-      color: white;
-      transition: background-color 0.3s;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    form button:hover {
-      background-color: #004085;
-    }
-
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -210,95 +147,76 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Навігація -->
+  <!-- 👻 Фон з логотипами -->
+  <div class="background-logos">
+    <img src="logo.png" class="logo-bg" style="top: 10%; left: 5%;" />
+    <img src="logo.png" class="logo-bg" style="top: 20%; left: 70%;" />
+    <img src="logo.png" class="logo-bg" style="top: 50%; left: 40%;" />
+    <img src="logo.png" class="logo-bg" style="top: 70%; left: 10%;" />
+    <img src="logo.png" class="logo-bg" style="top: 85%; left: 80%;" />
+  </div>
+
+  <!-- 🔹 Навігація -->
   <nav class="navbar navbar-expand-md sticky-top">
     <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="#header">Головна Сторінка</a>
+      <a class="navbar-brand text-white fw-bold" href="#header">Головна</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
           <li class="nav-item"><a class="nav-link" href="#ranks">Звання</a></li>
-          <li class="nav-item"><a class="nav-link" href="schedule.html">Графік</a></li>
-          <li class="nav-item"><a class="nav-link" href="#apply">Заявка</a></li>
-          <li class="nav-item"><a class="nav-link" href="news.html">Новини</a></li>
-<li class="ten-codes.html"><a class="nav-link" href="ten-codes.html">Коди Та ТенКоди</a></li>
-<li class="units.html"><a class="nav-link" href="units.html">Пiдроздiли</a></li>
-<li class="statut.html"><a class="nav-link" href="statut.html">Статус МВС</a></li>
-
-
         </ul>
       </div>
     </div>
   </nav>
 
-<header id="header">
-  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between py-4">
-    <div class="d-flex align-items-center">
-      <img src="logo.png" alt="СБУ Логотип" class="me-3" style="width: 80px;" />
-      <h1 class="m-0">Служба Безпеки Південної України</h1>
-    </div>
-    <div class="mt-3 mt-md-0">
-      <a href="https://t.me/+4bLn4EK0HLxlNjky" target="_blank" class="btn btn-outline-primary">
+  <!-- 🔹 Хедер -->
+  <header id="header">
+    <div class="container text-center">
+      <img src="logo.png" alt="СБУ Логотип" />
+      <h1>Служба Безпеки Південної України</h1>
+      <a href="https://t.me/+4bLn4EK0HLxlNjky" class="btn btn-outline-primary mt-3" target="_blank">
         <i class="fab fa-telegram"></i> Telegram
       </a>
     </div>
-  </div>
-</header>
+  </header>
 
-  <!-- Команда -->
+  <!-- 🔹 Команда -->
   <section id="team">
     <div class="container">
       <h2 class="fade-in">Керівництво</h2>
-      <div class="general-container fade-in">
-        <div class="text-center">
-          <img src="generaal.png" alt="Генерал Ваня Бішоп" class="avatar" />
-          <div class="member-name">Денис Червоний</div>
-          <div class="member-rank">Генерал</div>
-        </div>
+      <div class="text-center fade-in mb-5">
+        <img src="generaal.png" class="avatar" alt="Генерал" />
+        <div class="member-name">Денис Червоний</div>
+        <div class="member-rank">Генерал</div>
       </div>
 
-      <div class="row colonels-row justify-content-center gx-5 fade-in">
-        <div class="col-4 col-md-2 text-center">
-          <img src="polkovniik.png" alt="Полковник Федя Кисленко" class="avatar" />
-          <div class="member-name">Дєн Картье</div>
+      <div class="row justify-content-center fade-in">
+        <div class="col-md-3 text-center mb-4 team-member">
+          <img src="user1.jpg" alt="Член команди 1" />
+          <div class="member-name">Іван Коваль</div>
           <div class="member-rank">Полковник</div>
         </div>
-        <!-- Вакантні місця -->
-        <div class="col-4 col-md-2 text-center">
-          <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-          <div class="member-name">Барни Росс</div>
-          <div class="member-rank">Полковник</div>
+        <div class="col-md-3 text-center mb-4 team-member">
+          <img src="user2.jpg" alt="Член команди 2" />
+          <div class="member-name">Олександр Шевченко</div>
+          <div class="member-rank">Майор</div>
         </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-          <div class="member-name">Вакантно</div>
-          <div class="member-rank">Полковник</div>
-        </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-          <div class="member-name">Вакантно</div>
-          <div class="member-rank">Полковник</div>
-        </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-          <div class="member-name">Вакантно</div>
-          <div class="member-rank">Полковник</div>
-        </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="polkovniik.png" alt="Полковник Вакантно" class="avatar" />
-          <div class="member-name">Вакантно</div>
-          <div class="member-rank">Полковник</div>
+        <div class="col-md-3 text-center mb-4 team-member">
+          <img src="user3.jpg" alt="Член команди 3" />
+          <div class="member-name">Наталія Вербицька</div>
+          <div class="member-rank">Капітан</div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Звання -->
+  <!-- 🔹 Звання -->
   <section id="ranks" class="bg-light">
     <div class="container">
       <h2 class="fade-in">Звання</h2>
@@ -311,25 +229,15 @@
         <li>Лейтенант</li>
         <li>Старший лейтенант</li>
         <li>Капітан</li>
- <li>Майор</li>
- <li>Підполковник</li>
- <li>Полковник</li>
- <li>Генерал</li>
+        <li>Майор</li>
+        <li>Підполковник</li>
+        <li>Полковник</li>
+        <li>Генерал</li>
       </ul>
     </div>
   </section>
 
-  <!-- Заявка -->
-  <section id="apply">
-    <div class="container">
-      <h2 class="fade-in">Подати заявку</h2>
-      <div class="text-center fade-in">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4_bpjJhueg-iKfWlk_TiLNRq41yWIi6bSS9dGhYR0U2QG8g/viewform?usp=dialog" target="_blank" class="btn btn-primary btn-lg">Заповнити анкету</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Scripts -->
+  <!-- 🔹 Скріпт анімації -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     function onEntry(entry) {
@@ -344,5 +252,6 @@
     let observer = new IntersectionObserver(onEntry, options);
     document.querySelectorAll('.fade-in').forEach(elm => observer.observe(elm));
   </script>
+
 </body>
 </html>
